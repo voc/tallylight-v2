@@ -1,0 +1,11 @@
+*-backups/
+fp-info-cache
+*.log
+_autosave-*
+*-rescue.dcm
+*.bak
+/*.zip
+*.xml
+/*.csv
+TallyLight
+*.lck

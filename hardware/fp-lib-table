@@ -1,0 +1,11 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "Connector_RJ_HanRun")(type "KiCad")(uri "${KIPRJMOD}/lib/Connector_RJ_HanRun.pretty")(options "")(descr ""))
+  (lib (name "Transformer_HanRun")(type "KiCad")(uri "${KIPRJMOD}/lib/Transformer_HanRun.pretty")(options "")(descr ""))
+  (lib (name "LED_Opsco")(type "KiCad")(uri "${KIPRJMOD}/lib/LED_Opsco.pretty")(options "")(descr ""))
+  (lib (name "Button_Switch_SMD_LCSC")(type "KiCad")(uri "${KIPRJMOD}/lib/Button_Switch_SMD_LCSC.pretty")(options "")(descr ""))
+  (lib (name "Optocoupler_SMD_AOTE")(type "KiCad")(uri "${KIPRJMOD}/lib/Optocoupler_SMD_AOTE.pretty")(options "")(descr ""))
+  (lib (name "RF_Module_Espressif")(type "KiCad")(uri "${KIPRJMOD}/lib/RF_Module_Espressif.pretty")(options "")(descr ""))
+  (lib (name "ToolingHole")(type "KiCad")(uri "${KIPRJMOD}/lib/ToolingHole.pretty")(options "")(descr ""))
+  (lib (name "QFN_Skyworks")(type "KiCad")(uri "${KIPRJMOD}/lib/QFN_Skyworks.pretty")(options "")(descr ""))
+)
