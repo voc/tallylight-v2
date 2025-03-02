@@ -3906,7 +3906,7 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 104.14) (xy 170.18 104.14)
+			(xy 162.56 104.14) (xy 172.72 104.14)
 		)
 		(stroke
 			(width 0)
@@ -8086,7 +8086,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "7f99c5c8-62e2-4015-88bc-f26e1955011e")
 		(property "Reference" "TR1"
 			(at 182.88 57.658 0)

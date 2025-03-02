@@ -245,7 +245,6 @@
 	(net 99 "Net-(C18-Pad2)")
 	(net 100 "unconnected-(TR1-Pad2)")
 	(net 101 "unconnected-(TR1-Pad5)")
-	(net 102 "unconnected-(U10-Pad4)")
 	(footprint "Capacitor_SMD:C_0402_1005Metric"
 		(layer "F.Cu")
 		(uuid "052958bf-12c8-4a0a-8038-278e807d1f76")
@@ -5822,7 +5821,7 @@
 			(at 1.27 4.610001 180)
 			(size 1.5 1.6)
 			(layers "F.Cu" "F.Paste" "F.Mask")
-			(net 102 "unconnected-(U10-Pad4)")
+			(net 44 "Net-(U9-EROUT)")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
 			(uuid "f077ba65-8c26-4666-b21f-da47b577e07c")
@@ -21007,6 +21006,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C2934560"
+			(at 0 0 157.5)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "635bdfc7-c900-4543-a43a-397f4082ef1e")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
