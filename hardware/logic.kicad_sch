@@ -8488,7 +8488,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "1uF"
 			(at 149.6441 72.3384 0)
 			(effects
 				(font
@@ -8524,7 +8524,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C1525"
+		(property "LCSC" "C52923"
 			(at 147.32 71.12 0)
 			(effects
 				(font
@@ -11645,7 +11645,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "1uF"
 			(at 118.3259 87.5784 0)
 			(effects
 				(font
@@ -11681,7 +11681,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C1525"
+		(property "LCSC" "C52923"
 			(at 120.65 86.36 0)
 			(effects
 				(font

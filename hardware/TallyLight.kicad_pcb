@@ -718,7 +718,7 @@
 			)
 		)
 		(property "Value" "CJ431"
-			(at 0 2.4 360)
+			(at 0 2.4 0)
 			(layer "F.Fab")
 			(uuid "bf1bd647-35d4-4131-bf69-db9c76d4557e")
 			(effects
@@ -729,7 +729,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "18aa3750-1aaa-488c-9e06-68b72e6bd14f")
@@ -741,7 +741,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.cj-elec.com/txUpfile/20134181474991806.pdf"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c8e5920c-9ce8-414b-bd05-8254c6f18c28")
@@ -753,7 +753,7 @@
 			)
 		)
 		(property "Description" "Shunt Regulator, SOT-23"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "3719e4bd-12b6-4933-8d7e-0e1cedd2a9ee")
@@ -925,7 +925,7 @@
 			(uuid "d1625643-e432-47a2-ab2e-f81495515e2e")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(uuid "9b986db4-9644-4933-89e1-fff5d0ea4f4a")
 			(effects
@@ -5635,7 +5635,7 @@
 		(uuid "32429466-785c-4a97-a605-43806a0cd1a5")
 		(at 137.28 101.539999 180)
 		(property "Reference" "U10"
-			(at -3.4 0 270)
+			(at -3.4 0 -90)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(hide yes)
@@ -6064,7 +6064,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 0 1.17 360)
+			(at 0 1.17 0)
 			(layer "F.Fab")
 			(uuid "63cadc68-e2c0-49a1-8f86-d89e6fc914d5")
 			(effects
@@ -6232,7 +6232,7 @@
 			(uuid "a33f66c9-8d1e-4126-8772-900f41aebd51")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(uuid "c0ace218-960b-42d7-9c1e-24729e8465d6")
 			(effects
@@ -7105,7 +7105,7 @@
 		)
 		(fp_line
 			(start -0.525 0.270001)
-			(end -0.525001 -0.269999)
+			(end -0.525001 -0.27)
 			(stroke
 				(width 0.1)
 				(type solid)
@@ -7114,7 +7114,7 @@
 			(uuid "82b44dc4-156b-43c1-ac9e-36d2dd188ad8")
 		)
 		(fp_line
-			(start -0.525001 -0.269999)
+			(start -0.525001 -0.27)
 			(end 0.525 -0.270001)
 			(stroke
 				(width 0.1)
@@ -7124,7 +7124,7 @@
 			(uuid "09d81429-33bf-48d3-9a9e-f09fa83e2d34")
 		)
 		(fp_line
-			(start 0.525001 0.269999)
+			(start 0.525001 0.27)
 			(end -0.525 0.270001)
 			(stroke
 				(width 0.1)
@@ -7135,7 +7135,7 @@
 		)
 		(fp_line
 			(start 0.525 -0.270001)
-			(end 0.525001 0.269999)
+			(end 0.525001 0.27)
 			(stroke
 				(width 0.1)
 				(type solid)
@@ -7637,7 +7637,7 @@
 			)
 		)
 		(property "Value" "SS210"
-			(at 0 2.6 360)
+			(at 0 2.6 0)
 			(layer "F.Fab")
 			(uuid "74a1341b-cb9a-4738-857d-7c0f7030c7ca")
 			(effects
@@ -7875,7 +7875,7 @@
 			(uuid "db0bf57f-da08-4125-abfc-07d1c831029f")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 -2.5 360)
+			(at 0 -2.5 0)
 			(layer "F.Fab")
 			(uuid "9ccd73fd-1f57-4407-a841-bed6ee68b54b")
 			(effects
@@ -7936,7 +7936,7 @@
 			)
 		)
 		(property "Value" "220pF"
-			(at 0 1.16 360)
+			(at 0 1.16 0)
 			(layer "F.Fab")
 			(uuid "29e632d6-d2dd-473b-92f1-bc7c8e1e43c4")
 			(effects
@@ -8104,7 +8104,7 @@
 			(uuid "047c87cb-720e-45b4-aa1b-f73c8926af3c")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(uuid "4dc073b4-35bd-42b2-9759-9b248e19388b")
 			(effects
@@ -8162,7 +8162,7 @@
 				)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "1uF"
 			(at 0 1.16 157.5)
 			(layer "F.Fab")
 			(uuid "a1abac69-6466-4feb-9eeb-9d4b96c6883f")
@@ -8212,7 +8212,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C1525"
+		(property "LCSC" "C52923"
 			(at 0 0 -22.5)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -13751,7 +13751,7 @@
 		)
 		(fp_line
 			(start -0.64944 0.001019)
-			(end -1.55114 0.001021)
+			(end -1.551139 0.001021)
 			(stroke
 				(width 0.1)
 				(type solid)
@@ -14118,7 +14118,7 @@
 			)
 		)
 		(property "Value" "10uF"
-			(at 0 1.16 162)
+			(at 0 1.160001 162)
 			(layer "F.Fab")
 			(uuid "d8fe3517-2a30-4a5f-ab82-fdd32d7acd1a")
 			(effects
@@ -17191,7 +17191,7 @@
 			(uuid "6959d303-6e90-4226-9856-a6ddd0fa5c75")
 		)
 		(fp_line
-			(start -3.410001 -2.345562)
+			(start -3.410002 -2.345562)
 			(end -2.345563 -3.41)
 			(stroke
 				(width 0.12)
@@ -17201,7 +17201,7 @@
 			(uuid "802c90b8-7e1a-4fbe-91a3-cb097d076f65")
 		)
 		(fp_line
-			(start -3.410001 -2.345562)
+			(start -3.410002 -2.345562)
 			(end -3.410001 -1.059999)
 			(stroke
 				(width 0.12)
@@ -17232,7 +17232,7 @@
 		)
 		(fp_line
 			(start -3.41 2.345563)
-			(end -2.345562 3.410001)
+			(end -2.345562 3.410002)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -17241,7 +17241,7 @@
 			(uuid "58a379ad-4220-4bec-8611-04a973cfd3a8")
 		)
 		(fp_line
-			(start -2.345562 3.410001)
+			(start -2.345562 3.410002)
 			(end 3.409999 3.41)
 			(stroke
 				(width 0.12)
@@ -18443,7 +18443,7 @@
 			)
 		)
 		(property "Value" "100nF HV"
-			(at -0.000001 1.68 360)
+			(at -0.000001 1.68 0)
 			(layer "F.Fab")
 			(uuid "fb0254b4-3cfc-46d5-91ae-0b951e9274a0")
 			(effects
@@ -18611,7 +18611,7 @@
 			(uuid "b6a855d2-269a-4eb4-9a51-0e8cf6ea0d52")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(uuid "e904ef9f-7bec-48c6-9d53-497957b9de38")
 			(effects
@@ -20053,7 +20053,7 @@
 			)
 		)
 		(property "Value" "0"
-			(at 0 1.17 360)
+			(at 0 1.17 0)
 			(layer "F.Fab")
 			(uuid "8646dd01-df94-4545-940f-6390af98349b")
 			(effects
@@ -20221,7 +20221,7 @@
 			(uuid "6f3de8cc-2b5d-4d6b-b00b-a49bb9d6838d")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(uuid "7c18e212-db64-4008-93d5-9fe29c1c47c1")
 			(effects
@@ -20279,7 +20279,7 @@
 				)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "1uF"
 			(at 0 1.16 157.5)
 			(layer "F.Fab")
 			(uuid "265a84b0-ef6b-4712-88c8-24c7a12964ef")
@@ -20329,7 +20329,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C1525"
+		(property "LCSC" "C52923"
 			(at 0 0 157.5)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -20507,7 +20507,7 @@
 			)
 		)
 		(property "Value" "4.7k"
-			(at 0 1.17 360)
+			(at 0 1.17 0)
 			(layer "F.Fab")
 			(uuid "88553ae3-a22b-4568-acb3-9f70ef5a478f")
 			(effects
@@ -20675,7 +20675,7 @@
 			(uuid "0f3fd148-51fe-4a9b-981d-f5441c4f73f6")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(uuid "601c2c63-35e4-4ab2-8ed3-d492720753f6")
 			(effects
@@ -21362,7 +21362,7 @@
 		)
 		(fp_line
 			(start -8.500001 -6.000001)
-			(end -8.999998 -5.500001)
+			(end -8.999998 -5.5)
 			(stroke
 				(width 0.1)
 				(type solid)
@@ -21381,7 +21381,7 @@
 			(uuid "c294cfc3-793d-4a1b-a425-0a2945f0b7c4")
 		)
 		(fp_line
-			(start -8.999998 -5.500001)
+			(start -8.999998 -5.5)
 			(end -9 6.9)
 			(stroke
 				(width 0.1)
@@ -21813,7 +21813,7 @@
 			(uuid "5a3af452-1cd4-4666-931e-bc12dc39eec9")
 		)
 		(pad "19" thru_hole circle
-			(at 2.06 0.75 157.5)
+			(at 2.06 0.750001 157.5)
 			(size 0.6 0.6)
 			(drill 0.2)
 			(property pad_prop_heatsink)
@@ -21897,7 +21897,7 @@
 			)
 		)
 		(property "Value" "Strapping"
-			(at 0 7.41 360)
+			(at 0 7.41 0)
 			(layer "F.Fab")
 			(uuid "510d789c-cdb3-4112-ae11-85c0c0cdd9c9")
 			(effects
@@ -27493,7 +27493,7 @@
 		)
 		(fp_line
 			(start -0.649439 0.001019)
-			(end 0.501179 0.750318)
+			(end 0.50118 0.750318)
 			(stroke
 				(width 0.1)
 				(type solid)
@@ -27522,7 +27522,7 @@
 			(uuid "2cfcdc2b-a392-4f93-b0ec-06a0266aa1b4")
 		)
 		(fp_line
-			(start 0.501179 0.750318)
+			(start 0.50118 0.750318)
 			(end 0.501181 -0.799081)
 			(stroke
 				(width 0.1)
@@ -28751,7 +28751,7 @@
 			)
 		)
 		(property "Value" "HR051067"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(uuid "35a7f39b-bd6a-4418-b271-2e7d564a8bb6")
 			(effects
@@ -28762,7 +28762,7 @@
 			)
 		)
 		(property "Footprint" "Transformer_HanRun:HR051067"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "506297ff-3e90-4316-8f6a-b61eeb537e84")
@@ -28774,7 +28774,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2409302201_HANRUN-Zhongshan-HanRun-Elec-HR051067_C93830.pdf"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "fadda880-7643-4541-81f7-eaa3cf43a4c9")
@@ -28786,7 +28786,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "be67fb7a-f948-42a7-8242-53f4ee05a1da")
@@ -32931,7 +32931,7 @@
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
 		(property "Reference" "TP14"
-			(at 0 3.000001 360)
+			(at 0 3.000001 0)
 			(layer "B.SilkS")
 			(hide yes)
 			(uuid "1412c19f-c9ac-4232-82ab-887a8507a638")
@@ -32944,7 +32944,7 @@
 			)
 		)
 		(property "Value" "GND2"
-			(at 0 -2.05 360)
+			(at 0 -2.05 0)
 			(layer "B.Fab")
 			(uuid "f89765a8-68d5-4269-894b-f857df5ca7c3")
 			(effects
@@ -33044,7 +33044,7 @@
 			(uuid "0ed8b71e-5bc1-4c49-b4d3-477d96be14c6")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0.000001 2 360)
+			(at 0.000001 2 0)
 			(layer "B.Fab")
 			(uuid "30c74b27-d271-47ae-ba0a-d788daba3683")
 			(effects
