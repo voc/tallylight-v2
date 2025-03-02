@@ -5,4 +5,6 @@
   (lib (name "Transformer_HanRun")(type "KiCad")(uri "${KIPRJMOD}/lib/Transformer_HanRun.kicad_sym")(options "")(descr ""))
   (lib (name "LED_Opsco")(type "KiCad")(uri "${KIPRJMOD}/lib/LED_Opsco.kicad_sym")(options "")(descr ""))
   (lib (name "PoE_Skyworks")(type "KiCad")(uri "${KIPRJMOD}/lib/PoE_Skyworks.kicad_sym")(options "")(descr ""))
+  (lib (name "ESP32_C3")(type "KiCad")(uri "${KIPRJMOD}/lib/ESP32_C3.kicad_sym")(options "")(descr ""))
+  (lib (name "Ethernet_Microchip")(type "KiCad")(uri "${KIPRJMOD}/lib/Ethernet_Microchip.kicad_sym")(options "")(descr ""))
 )

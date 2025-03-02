@@ -8,4 +8,5 @@
   (lib (name "RF_Module_Espressif")(type "KiCad")(uri "${KIPRJMOD}/lib/RF_Module_Espressif.pretty")(options "")(descr ""))
   (lib (name "ToolingHole")(type "KiCad")(uri "${KIPRJMOD}/lib/ToolingHole.pretty")(options "")(descr ""))
   (lib (name "QFN_Skyworks")(type "KiCad")(uri "${KIPRJMOD}/lib/QFN_Skyworks.pretty")(options "")(descr ""))
+  (lib (name "ESP32_C3")(type "KiCad")(uri "${KIPRJMOD}/lib/ESP32_C3.pretty")(options "")(descr ""))
 )

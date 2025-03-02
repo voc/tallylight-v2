@@ -2748,16 +2748,16 @@
 		)
 	)
 	(junction
-		(at 135.89 76.2)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "009de816-f16d-4126-a221-420df6cc2ec2")
-	)
-	(junction
 		(at 176.53 123.19)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "010040f6-2568-4ad8-b52f-c6b04f463225")
+	)
+	(junction
+		(at 121.92 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "04f92c64-a686-4090-af29-0f542ccd053a")
 	)
 	(junction
 		(at 148.59 104.14)
@@ -2868,10 +2868,10 @@
 		(uuid "aea2cbb4-8db8-443b-9a22-1f6ecdbeab97")
 	)
 	(junction
-		(at 121.92 76.2)
+		(at 137.16 76.2)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "b2b4426c-a8c9-4e2b-b205-e13c8e2ad7f7")
+		(uuid "b2714863-457b-4546-ae38-c4918b3136c9")
 	)
 	(junction
 		(at 212.09 130.81)
@@ -2951,6 +2951,16 @@
 	)
 	(wire
 		(pts
+			(xy 132.08 76.2) (xy 137.16 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "05170ff4-4513-4ce7-873e-b0d144151fcc")
+	)
+	(wire
+		(pts
 			(xy 88.9 102.87) (xy 88.9 101.6)
 		)
 		(stroke
@@ -2988,16 +2998,6 @@
 			(type default)
 		)
 		(uuid "1902ef22-d459-4f1c-83ec-53e2730042e2")
-	)
-	(wire
-		(pts
-			(xy 135.89 76.2) (xy 151.13 76.2)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "196ec3fa-ca6c-47d6-a74e-ee932534dfe5")
 	)
 	(wire
 		(pts
@@ -3411,7 +3411,7 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 76.2) (xy 135.89 77.47)
+			(xy 137.16 76.2) (xy 137.16 77.47)
 		)
 		(stroke
 			(width 0)
@@ -3521,6 +3521,16 @@
 	)
 	(wire
 		(pts
+			(xy 121.92 76.2) (xy 127 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "94473ca5-15f0-47a8-a554-67ed52c56dc3")
+	)
+	(wire
+		(pts
 			(xy 105.41 124.46) (xy 107.95 124.46)
 		)
 		(stroke
@@ -3558,6 +3568,16 @@
 			(type default)
 		)
 		(uuid "a0831961-5fb7-4cfe-8371-9b4da4614932")
+	)
+	(wire
+		(pts
+			(xy 137.16 76.2) (xy 151.13 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a10bb35b-acf6-4c03-a6b5-6a44277c7837")
 	)
 	(wire
 		(pts
@@ -3638,16 +3658,6 @@
 			(type default)
 		)
 		(uuid "b10c34bb-b909-460a-ac75-e1d77e08bdf2")
-	)
-	(wire
-		(pts
-			(xy 121.92 76.2) (xy 135.89 76.2)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b3085394-16f8-4cf1-9e92-d6fd77606804")
 	)
 	(wire
 		(pts
@@ -5462,7 +5472,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 121.92 80.01 0)
+		(at 137.16 80.01 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5470,7 +5480,7 @@
 		(dnp no)
 		(uuid "66f858fc-6755-4a12-8be1-58ce91b9050b")
 		(property "Reference" "C52"
-			(at 124.2441 78.8041 0)
+			(at 139.4841 78.8041 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5479,7 +5489,7 @@
 			)
 		)
 		(property "Value" "100nF HV"
-			(at 124.2441 81.2284 0)
+			(at 139.4841 81.2284 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5488,7 +5498,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 121.92 80.01 0)
+			(at 137.16 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5497,7 +5507,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 121.92 80.01 0)
+			(at 137.16 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5506,7 +5516,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 121.92 80.01 0)
+			(at 137.16 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5515,7 +5525,7 @@
 			)
 		)
 		(property "LCSC" "C28233"
-			(at 121.92 80.01 0)
+			(at 137.16 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6191,6 +6201,83 @@
 			(project "TallyLight"
 				(path "/d4f869dd-5485-4b4f-b239-21313c2a8e4c/210de0db-26c5-4c02-8853-8d735ccb28a9"
 					(reference "U9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:L_Small")
+		(at 129.54 76.2 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "92a00259-c03e-46ff-aa60-1e01a165adaa")
+		(property "Reference" "L1"
+			(at 129.54 71.6767 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2.2uH"
+			(at 129.54 74.101 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Inductor_SMD:L_1008_2520Metric"
+			(at 129.54 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 129.54 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Inductor, small symbol"
+			(at 129.54 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C964122"
+			(at 129.54 76.2 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e8552979-4419-4570-84f8-80a040cbe514")
+		)
+		(pin "2"
+			(uuid "59ff39c3-a4d9-4b38-8d92-5c6633f44580")
+		)
+		(instances
+			(project "TallyLight"
+				(path "/d4f869dd-5485-4b4f-b239-21313c2a8e4c/210de0db-26c5-4c02-8853-8d735ccb28a9"
+					(reference "L1")
 					(unit 1)
 				)
 			)
@@ -7103,7 +7190,7 @@
 	)
 	(symbol
 		(lib_id "power:GND2")
-		(at 135.89 82.55 0)
+		(at 137.16 82.55 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7112,7 +7199,7 @@
 		(fields_autoplaced yes)
 		(uuid "d37191e0-0055-4ce5-9cd1-c5a6da949369")
 		(property "Reference" "#PWR099"
-			(at 135.89 88.9 0)
+			(at 137.16 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7121,7 +7208,7 @@
 			)
 		)
 		(property "Value" "GND2"
-			(at 135.89 86.6831 0)
+			(at 137.16 86.6831 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7129,7 +7216,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 135.89 82.55 0)
+			(at 137.16 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7138,7 +7225,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 135.89 82.55 0)
+			(at 137.16 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7147,7 +7234,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND2\" , ground"
-			(at 135.89 82.55 0)
+			(at 137.16 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7326,7 +7413,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 135.89 80.01 0)
+		(at 121.92 80.01 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7334,7 +7421,7 @@
 		(dnp no)
 		(uuid "dea185c5-235e-43a2-bc13-b70a0501e723")
 		(property "Reference" "C53"
-			(at 138.2141 78.8041 0)
+			(at 124.2441 78.8041 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7343,7 +7430,7 @@
 			)
 		)
 		(property "Value" "100nF HV"
-			(at 138.2141 81.2284 0)
+			(at 124.2441 81.2284 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7352,7 +7439,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 135.89 80.01 0)
+			(at 121.92 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7361,7 +7448,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 135.89 80.01 0)
+			(at 121.92 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7370,7 +7457,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 135.89 80.01 0)
+			(at 121.92 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7379,7 +7466,7 @@
 			)
 		)
 		(property "LCSC" "C28233"
-			(at 135.89 80.01 0)
+			(at 121.92 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
