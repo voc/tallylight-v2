@@ -9,4 +9,6 @@
   (lib (name "ToolingHole")(type "KiCad")(uri "${KIPRJMOD}/lib/ToolingHole.pretty")(options "")(descr ""))
   (lib (name "QFN_Skyworks")(type "KiCad")(uri "${KIPRJMOD}/lib/QFN_Skyworks.pretty")(options "")(descr ""))
   (lib (name "ESP32_C3")(type "KiCad")(uri "${KIPRJMOD}/lib/ESP32_C3.pretty")(options "")(descr ""))
+  (lib (name "TestPoint_no_outline")(type "KiCad")(uri "${KIPRJMOD}/lib/TestPoint_no_outline.pretty")(options "")(descr ""))
+  (lib (name "TestPoint_polygon_outline")(type "KiCad")(uri "${KIPRJMOD}/lib/TestPoint_polygon_outline.pretty")(options "")(descr ""))
 )
