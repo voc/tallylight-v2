@@ -5944,6 +5944,12 @@
 		(uuid "a04e30ba-2dc6-4f8c-ab60-adcaaaf23938")
 	)
 	(junction
+		(at 54.61 167.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a2c0ba79-3f06-433d-93b0-2738080b8277")
+	)
+	(junction
 		(at 254 143.51)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5962,12 +5968,6 @@
 		(uuid "adf05f84-fcc1-4de3-a729-0c28c4b2804f")
 	)
 	(junction
-		(at 66.04 167.64)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b2ebaa6c-491e-4257-bc75-55af60bfc439")
-	)
-	(junction
 		(at 68.58 129.54)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5978,12 +5978,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "be0d2b88-f8c2-4ddf-8512-67c33a53fe92")
-	)
-	(junction
-		(at 54.61 167.64)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c581b067-9a60-4196-a7b8-c80af4350fb1")
 	)
 	(junction
 		(at 64.77 31.75)
@@ -6044,6 +6038,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fa50441b-02a0-42d8-8e0c-99fe5707d4ec")
+	)
+	(junction
+		(at 66.04 167.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ff59fe91-7404-4a21-a57d-5535ece6c4c2")
 	)
 	(no_connect
 		(at 154.94 133.35)
@@ -7123,7 +7123,7 @@
 	)
 	(wire
 		(pts
-			(xy 66.04 167.64) (xy 66.04 168.91)
+			(xy 66.04 166.37) (xy 66.04 167.64)
 		)
 		(stroke
 			(width 0)
@@ -7180,6 +7180,16 @@
 			(type default)
 		)
 		(uuid "8c7917fd-6f1b-452c-95c0-202b3ff06809")
+	)
+	(wire
+		(pts
+			(xy 62.23 167.64) (xy 66.04 167.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8cb5cb9c-00f1-41a3-a42c-c4c521b6b751")
 	)
 	(wire
 		(pts
@@ -7653,6 +7663,16 @@
 	)
 	(wire
 		(pts
+			(xy 54.61 167.64) (xy 57.15 167.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d3cca1fc-0c22-4754-b195-bf897968b6c9")
+	)
+	(wire
+		(pts
 			(xy 170.18 120.65) (xy 182.88 120.65)
 		)
 		(stroke
@@ -7730,6 +7750,16 @@
 			(type default)
 		)
 		(uuid "dcc3ba99-eea6-44d2-8e0c-230dc0ca7e4a")
+	)
+	(wire
+		(pts
+			(xy 66.04 167.64) (xy 66.04 168.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dd6d8118-0edb-458d-8c12-cb3f9cdf4ed8")
 	)
 	(wire
 		(pts
@@ -7863,16 +7893,6 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 167.64) (xy 66.04 167.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f6e4bc61-7338-4641-ad27-c099f4880e59")
-	)
-	(wire
-		(pts
 			(xy 68.58 114.3) (xy 95.25 114.3)
 		)
 		(stroke
@@ -7910,16 +7930,6 @@
 			(type default)
 		)
 		(uuid "fd2c0194-addc-43ab-adc9-ff68e0486184")
-	)
-	(wire
-		(pts
-			(xy 66.04 166.37) (xy 66.04 167.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fe77ca3d-3273-4fe4-97a2-c3073daf7b06")
 	)
 	(text "Alternate parts:\nHanRun HY931147C\nHCTL HC931147C\n"
 		(exclude_from_sim no)
@@ -8895,6 +8905,84 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C_Small")
+		(at 193.04 68.58 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "116eea0a-819b-4313-9d0a-930a77448828")
+		(property "Reference" "C23"
+			(at 190.7159 67.3741 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "100nF"
+			(at 190.7159 69.7984 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 193.04 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 193.04 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 193.04 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C1525"
+			(at 193.04 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "587d7930-61c6-4e98-bd5d-9955144a05fc")
+		)
+		(pin "1"
+			(uuid "64393831-a035-4a1b-8cc2-cc2513329f77")
+		)
+		(instances
+			(project "TallyLight"
+				(path "/d4f869dd-5485-4b4f-b239-21313c2a8e4c/7cb40ab1-1706-4709-9063-b880462d2aa7"
+					(reference "C23")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_name "GND_7")
 		(lib_id "power:GND")
 		(at 185.42 107.95 0)
@@ -9023,6 +9111,73 @@
 			(project "TallyLight"
 				(path "/d4f869dd-5485-4b4f-b239-21313c2a8e4c/7cb40ab1-1706-4709-9063-b880462d2aa7"
 					(reference "#PWR028")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_7")
+		(lib_id "power:GND")
+		(at 177.8 71.12 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1da9efcc-4792-4403-af49-f0349e19ea71")
+		(property "Reference" "#PWR41"
+			(at 177.8 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 177.8 75.2531 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 177.8 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 177.8 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 177.8 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7d882eda-82d4-4dae-a18b-8939ed06217a")
+		)
+		(instances
+			(project "TallyLight"
+				(path "/d4f869dd-5485-4b4f-b239-21313c2a8e4c/7cb40ab1-1706-4709-9063-b880462d2aa7"
+					(reference "#PWR41")
 					(unit 1)
 				)
 			)
@@ -9531,6 +9686,73 @@
 		)
 	)
 	(symbol
+		(lib_name "+3V3_1")
+		(lib_id "power:+3V3")
+		(at 177.8 66.04 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2da7c3a3-166d-4598-b8ef-11beb07a55ad")
+		(property "Reference" "#PWR119"
+			(at 177.8 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 177.8 61.9069 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 177.8 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 177.8 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 177.8 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "bdea33e8-b970-418f-8433-d62bffe77b23")
+		)
+		(instances
+			(project "TallyLight"
+				(path "/d4f869dd-5485-4b4f-b239-21313c2a8e4c/7cb40ab1-1706-4709-9063-b880462d2aa7"
+					(reference "#PWR119")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_name "GND_3")
 		(lib_id "power:GND")
 		(at 119.38 67.31 0)
@@ -10022,6 +10244,83 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R_Small")
+		(at 59.69 167.64 270)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "43c8e753-df69-4628-a623-38a0a878dea7")
+		(property "Reference" "R16"
+			(at 59.944 163.576 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100R"
+			(at 59.69 165.608 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 59.69 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 59.69 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 59.69 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25076"
+			(at 59.69 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0da056a7-760b-4426-84f0-1b8c036eed1e")
+		)
+		(pin "2"
+			(uuid "a3447df7-bc3a-40e3-9c67-25ffb2bf7415")
+		)
+		(instances
+			(project "TallyLight"
+				(path "/d4f869dd-5485-4b4f-b239-21313c2a8e4c/7cb40ab1-1706-4709-9063-b880462d2aa7"
+					(reference "R16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_name "GND_4")
 		(lib_id "power:GND")
 		(at 135.89 152.4 0)
@@ -10468,6 +10767,73 @@
 			(project "TallyLight"
 				(path "/d4f869dd-5485-4b4f-b239-21313c2a8e4c/7cb40ab1-1706-4709-9063-b880462d2aa7"
 					(reference "FB2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_7")
+		(lib_id "power:GND")
+		(at 193.04 71.12 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "514948fd-d8cd-49f5-bcba-26285855b533")
+		(property "Reference" "#PWR49"
+			(at 193.04 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 193.04 75.2531 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 193.04 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 193.04 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 193.04 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7216547a-4d12-4c8e-a6cf-18fca427d418")
+		)
+		(instances
+			(project "TallyLight"
+				(path "/d4f869dd-5485-4b4f-b239-21313c2a8e4c/7cb40ab1-1706-4709-9063-b880462d2aa7"
+					(reference "#PWR49")
 					(unit 1)
 				)
 			)
@@ -13350,6 +13716,84 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C_Small")
+		(at 177.8 68.58 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a88b1729-1962-407d-aead-affaf446756d")
+		(property "Reference" "C22"
+			(at 175.4759 67.3741 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "100nF"
+			(at 175.4759 69.7984 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 177.8 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 177.8 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 177.8 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C1525"
+			(at 177.8 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "011cd855-0727-4f36-afcb-d05881012957")
+		)
+		(pin "1"
+			(uuid "427b77af-08f8-4cd8-969b-e2730df258f1")
+		)
+		(instances
+			(project "TallyLight"
+				(path "/d4f869dd-5485-4b4f-b239-21313c2a8e4c/7cb40ab1-1706-4709-9063-b880462d2aa7"
+					(reference "C22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_Small")
 		(at 66.04 137.16 270)
 		(mirror x)
@@ -15174,6 +15618,73 @@
 			(project "TallyLight"
 				(path "/d4f869dd-5485-4b4f-b239-21313c2a8e4c/7cb40ab1-1706-4709-9063-b880462d2aa7"
 					(reference "C16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "+3V3_1")
+		(lib_id "power:+3V3")
+		(at 193.04 66.04 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e6269b69-7db6-47cd-a047-b9635f8d7799")
+		(property "Reference" "#PWR50"
+			(at 193.04 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 193.04 61.9069 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 193.04 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 193.04 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 193.04 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "16560a43-e527-4136-bfc5-2b0ff3b903aa")
+		)
+		(instances
+			(project "TallyLight"
+				(path "/d4f869dd-5485-4b4f-b239-21313c2a8e4c/7cb40ab1-1706-4709-9063-b880462d2aa7"
+					(reference "#PWR50")
 					(unit 1)
 				)
 			)

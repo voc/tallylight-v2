@@ -6282,7 +6282,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "15nF"
+		(property "Value" "1nF"
 			(at 201.9816 120.8659 0)
 			(effects
 				(font
@@ -6318,7 +6318,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C15195"
+		(property "LCSC" "C1523"
 			(at 203.2 123.19 0)
 			(effects
 				(font
