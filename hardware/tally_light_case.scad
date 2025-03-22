@@ -202,6 +202,10 @@ module case_bottom() {
     //translate([-21.994568, 0.038583, 0]) screw_with_nut();
 }
 
+module pcb_vrml() {
+    rotate([-90, 0, 18 - 90]) import("./TallyLight.stl");
+}
+
 module lightguide_() {
     height = 1 + 2 + 1;
     offset = 1;
@@ -360,6 +364,8 @@ module case_bottom_lightguide() {
     offset_pcb = pcb_thickness + lightguide_offset;
     height_above_pcb = 2.5; // Minimum required to clear all solder joints
     height = offset_pcb + height_above_pcb;
+    quater_inch_insert_length = 12.7;
+    quater_inch_insert_support_length = quater_inch_insert_length+ 1;
     
     bottom_plate_thickness = 4;
     nut_depth = 2.6;
@@ -385,23 +391,26 @@ module case_bottom_lightguide() {
                         translate([17.992645, 12.65957, 0]) screw_post_bottom_lightguide(post_height);
                         translate([-21.994568, 0.038583, 0]) screw_post_bottom_lightguide(post_height);
                         
-                        translate([0, 0, -post_height]) cylinder(post_height, 8 / 2 + 4, 8 / 2 + 4);
+                        // Quater inch insert support
+                        translate([0, 0, offset_pcb - height - bottom_plate_thickness]) cylinder(quater_inch_insert_support_length + 3, 8.1 / 2 + 4 - 1, 8.1 / 2 + 4 - 1);
                     }
                     // bottom plate
                     translate([0, 0, -height_above_pcb - bottom_plate_thickness]) {
                         cylinder(bottom_plate_thickness, (od + 1) / 2, (od + 1) / 2);
                     }
                 }
-                translate([0, 0, -height_above_pcb - bottom_plate_thickness]) {
-                    translate([18.032521, -12.58848, 0]) hex_nut(nut_depth);
-                    translate([17.992645, 12.65957, 0]) hex_nut(nut_depth);
-                    translate([-21.994568, 0.038583, 0]) hex_nut(nut_depth);
+                union() {
+                    translate([0, 0, -height_above_pcb - bottom_plate_thickness]) {
+                        translate([18.032521, -12.58848, 0]) hex_nut(nut_depth);
+                        translate([17.992645, 12.65957, 0]) hex_nut(nut_depth);
+                        translate([-21.994568, 0.038583, 0]) hex_nut(nut_depth);
 
-                    translate([18.032521, -12.58848, 0]) cylinder(5, 3.2 / 2, 3.2 / 2);
-                    translate([17.992645, 12.65957, 0]) cylinder(5, 3.2 / 2, 3.2 / 2);
-                    translate([-21.994568, 0.038583, 0]) cylinder(5, 3.2 / 2, 3.2 / 2);
-                    
-                    cylinder(10, 8 / 2, 8 / 2);
+                        translate([18.032521, -12.58848, 0]) cylinder(5, 3.2 / 2, 3.2 / 2);
+                        translate([17.992645, 12.65957, 0]) cylinder(5, 3.2 / 2, 3.2 / 2);
+                        translate([-21.994568, 0.038583, 0]) cylinder(5, 3.2 / 2, 3.2 / 2);
+                    }
+                    // Quater inch insert void
+                    translate([0, 0, offset_pcb - height - bottom_plate_thickness - e2]) cylinder(quater_inch_insert_support_length + e, 8 / 2, 8 / 2);
                 }
             }
         }
@@ -410,6 +419,7 @@ module case_bottom_lightguide() {
 }
 
 color("white") lightguide();
+translate([0, 0, 1.6 / 2]) pcb_vrml();
 //pcb();
 //color("blue") translate([0, 0, base_height + height]) rotate([180, 0, 0]) case_top_lightguide_();
 color("blue") case_top_lightguide();
@@ -417,6 +427,7 @@ color("green") case_bottom_lightguide();
 
 // printable
 //!translate([0, 0, 16.8]) rotate([180, 0, 0]) case_top_lightguide();
+//!lightguide();
 //!translate([0, 0, 2.5 + 3 + 1]) case_bottom_lightguide();
 
 /*
@@ -424,8 +435,4 @@ translate([40, 0, 0]) {
     translate([-80, 0, 23]) rotate([0, 180, 0]) color("red") case_bottom();
     color("blue") case_top();
 }
-*/
-
-/*
-translate([40, 0, base_height + 13 + 1.6 / 2]) rotate([90, 0, -18 + 90]) translate([0, 0, -50]) import("/home/tsys/Downloads/tallylight_stl/ImageToStl.com_tallylight/ImageToStl.com_tallylight.stl");
 */
