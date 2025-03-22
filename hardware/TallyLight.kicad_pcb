@@ -4376,7 +4376,7 @@
 		(path "/210de0db-26c5-4c02-8853-8d735ccb28a9/7e57d83b-71b9-4d52-a522-6f1f5b5e7e0b")
 		(sheetname "PoE")
 		(sheetfile "poe.kicad_sch")
-		(attr smd dnp)
+		(attr smd exclude_from_pos_files exclude_from_bom dnp)
 		(fp_line
 			(start -0.107836 -0.360001)
 			(end 0.107835 -0.36)
@@ -12905,7 +12905,7 @@
 		(path "/210de0db-26c5-4c02-8853-8d735ccb28a9/7f99c5c8-62e2-4015-88bc-f26e1955011e")
 		(sheetname "PoE")
 		(sheetfile "poe.kicad_sch")
-		(attr smd dnp)
+		(attr smd exclude_from_pos_files exclude_from_bom dnp)
 		(fp_line
 			(start 4.624999 4.249998)
 			(end -4.625001 4.249998)
@@ -16546,7 +16546,7 @@
 		(path "/210de0db-26c5-4c02-8853-8d735ccb28a9/4a48e85d-54e3-40bc-a4d9-3c9c77aaea61")
 		(sheetname "PoE")
 		(sheetfile "poe.kicad_sch")
-		(attr smd dnp)
+		(attr smd exclude_from_pos_files exclude_from_bom dnp)
 		(fp_line
 			(start -0.153641 0.379999)
 			(end 0.153641 0.379999)
@@ -26854,7 +26854,7 @@
 		(path "/210de0db-26c5-4c02-8853-8d735ccb28a9/2bd2e3a0-8285-4b44-9524-b4a6ca2acd7b")
 		(sheetname "PoE")
 		(sheetfile "poe.kicad_sch")
-		(attr smd dnp)
+		(attr smd exclude_from_pos_files exclude_from_bom dnp)
 		(fp_line
 			(start -0.153641 0.379999)
 			(end 0.153641 0.379999)
@@ -31701,7 +31701,7 @@
 		(path "/210de0db-26c5-4c02-8853-8d735ccb28a9/a6109eaa-492f-42c4-b4b7-3695d2fc2ba9")
 		(sheetname "PoE")
 		(sheetfile "poe.kicad_sch")
-		(attr smd dnp)
+		(attr smd exclude_from_pos_files exclude_from_bom dnp)
 		(fp_line
 			(start -0.107837 -0.360001)
 			(end 0.107835 -0.36)
@@ -32142,7 +32142,7 @@
 		(path "/210de0db-26c5-4c02-8853-8d735ccb28a9/47ea7326-b7b7-4a8b-b69a-e6fbde6077b1")
 		(sheetname "PoE")
 		(sheetfile "poe.kicad_sch")
-		(attr exclude_from_pos_files)
+		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
 			(end 1.5 0)
@@ -32708,7 +32708,7 @@
 		(path "/210de0db-26c5-4c02-8853-8d735ccb28a9/4dc14345-4a18-48f3-af7d-0aa7a78b9f67")
 		(sheetname "PoE")
 		(sheetfile "poe.kicad_sch")
-		(attr exclude_from_pos_files)
+		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_line
 			(start -1.950001 -1.099998)
 			(end 0 2.2)
@@ -32985,7 +32985,7 @@
 		(path "/9bc8ac5c-e7dd-422f-b2d4-ac6bd6256b92/4be53d4b-0155-4ead-85fc-1f8c2c963270")
 		(sheetname "LEDs top")
 		(sheetfile "leds.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_pos_files)
 		(fp_line
 			(start 0.107837 0.360001)
 			(end -0.107836 0.36)
@@ -33219,7 +33219,7 @@
 		(path "/2498d782-750e-47a9-87b3-b1f09e16e239/f34d3d22-c8ea-422a-879f-000d7cd8e85f")
 		(sheetname "LEDs bottom")
 		(sheetfile "leds.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_pos_files)
 		(fp_poly
 			(pts
 				(xy -2.4 0.7) (xy 2.4 0.7) (xy 2.4 -1.6) (xy -2.4 -1.6)
@@ -33407,7 +33407,7 @@
 		(path "/2498d782-750e-47a9-87b3-b1f09e16e239/047d17e9-c7e9-49b1-b863-d806064fbcd9")
 		(sheetname "LEDs bottom")
 		(sheetfile "leds.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_pos_files)
 		(fp_poly
 			(pts
 				(xy -2.4 0.7) (xy 2.4 0.7) (xy 2.4 -1.6) (xy -2.4 -1.6)
@@ -33595,7 +33595,7 @@
 		(path "/2498d782-750e-47a9-87b3-b1f09e16e239/8bb54bb4-7fc9-452c-8e66-b862bcb2089e")
 		(sheetname "LEDs bottom")
 		(sheetfile "leds.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_pos_files)
 		(fp_poly
 			(pts
 				(xy -2.4 0.7) (xy 2.4 0.7) (xy 2.4 -1.6) (xy -2.4 -1.6)
@@ -33783,7 +33783,7 @@
 		(path "/9bc8ac5c-e7dd-422f-b2d4-ac6bd6256b92/c3f5f664-5d19-4c72-8c83-0c5265771526")
 		(sheetname "LEDs top")
 		(sheetfile "leds.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_pos_files)
 		(fp_line
 			(start 0.107837 0.360001)
 			(end -0.107835 0.36)
@@ -34003,7 +34003,7 @@
 		(path "/210de0db-26c5-4c02-8853-8d735ccb28a9/8494c5bc-6fb3-43ac-b576-cc31ff41040a")
 		(sheetname "PoE")
 		(sheetfile "poe.kicad_sch")
-		(attr exclude_from_pos_files)
+		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
 			(end 1.5 0)
@@ -34128,7 +34128,7 @@
 		(path "/2498d782-750e-47a9-87b3-b1f09e16e239/e7b13804-7450-475f-b424-8d1a4835184e")
 		(sheetname "LEDs bottom")
 		(sheetfile "leds.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_pos_files)
 		(fp_poly
 			(pts
 				(xy -2.4 0.699999) (xy 2.4 0.7) (xy 2.4 -1.6) (xy -2.4 -1.6)
@@ -34302,7 +34302,7 @@
 		(path "/210de0db-26c5-4c02-8853-8d735ccb28a9/21365250-7027-4507-a3c6-dc8ecc842f0f")
 		(sheetname "PoE")
 		(sheetfile "poe.kicad_sch")
-		(attr exclude_from_pos_files)
+		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
 			(end 1.5 0)
@@ -34413,7 +34413,7 @@
 		(path "/210de0db-26c5-4c02-8853-8d735ccb28a9/6aa48a92-0260-4da0-873d-0aea72ddf516")
 		(sheetname "PoE")
 		(sheetfile "poe.kicad_sch")
-		(attr exclude_from_pos_files)
+		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_line
 			(start -1.950001 -1.1)
 			(end 0 2.2)
@@ -34568,7 +34568,7 @@
 		(path "/2498d782-750e-47a9-87b3-b1f09e16e239/cf4c66d9-403a-4c18-b934-e0f3c4fd4822")
 		(sheetname "LEDs bottom")
 		(sheetfile "leds.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_pos_files)
 		(fp_poly
 			(pts
 				(xy -2.4 0.7) (xy 2.4 0.699999) (xy 2.4 -1.6) (xy -2.4 -1.6)
@@ -34742,7 +34742,7 @@
 		(path "/bb4c1109-8339-4be4-ad0f-76756393c641")
 		(sheetname "Stammblatt")
 		(sheetfile "TallyLight.kicad_sch")
-		(attr exclude_from_pos_files)
+		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
 			(end 1.5 0)
@@ -34964,7 +34964,7 @@
 		(path "/362003e4-1399-4b7c-993c-0ce0f0e1360b")
 		(sheetname "Stammblatt")
 		(sheetfile "TallyLight.kicad_sch")
-		(attr exclude_from_pos_files)
+		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
 			(end 0 -1.2)
@@ -35086,7 +35086,7 @@
 		(path "/210de0db-26c5-4c02-8853-8d735ccb28a9/0f9510f5-a6d5-4bb6-81c2-642606fc272e")
 		(sheetname "PoE")
 		(sheetfile "poe.kicad_sch")
-		(attr exclude_from_pos_files)
+		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
 			(end 1.5 0)
@@ -35211,7 +35211,7 @@
 		(path "/9bc8ac5c-e7dd-422f-b2d4-ac6bd6256b92/6c4300c8-052e-47d5-bf27-fbaccd2c1ced")
 		(sheetname "LEDs top")
 		(sheetfile "leds.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_pos_files)
 		(fp_line
 			(start 0.107837 -0.36)
 			(end -0.107836 -0.360001)
@@ -35445,7 +35445,7 @@
 		(path "/9bc8ac5c-e7dd-422f-b2d4-ac6bd6256b92/3b4bc0b9-9818-4dae-a44e-8108fc65dfd2")
 		(sheetname "LEDs top")
 		(sheetfile "leds.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_pos_files)
 		(fp_line
 			(start 0.107836 0.360001)
 			(end -0.107837 0.36)
@@ -35679,7 +35679,7 @@
 		(path "/2498d782-750e-47a9-87b3-b1f09e16e239/cdb8a33e-322c-490e-a380-0508177e9737")
 		(sheetname "LEDs bottom")
 		(sheetfile "leds.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_pos_files)
 		(fp_poly
 			(pts
 				(xy -2.4 0.699999) (xy 2.4 0.7) (xy 2.4 -1.6) (xy -2.4 -1.6)
@@ -35964,7 +35964,7 @@
 		(path "/210de0db-26c5-4c02-8853-8d735ccb28a9/75f931ad-ca1b-44a8-ac59-2c701481811d")
 		(sheetname "PoE")
 		(sheetfile "poe.kicad_sch")
-		(attr exclude_from_pos_files)
+		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
 			(end 1.5 0)
@@ -36089,7 +36089,7 @@
 		(path "/2498d782-750e-47a9-87b3-b1f09e16e239/5cd3f198-cc1b-4b92-bf85-5c4e69f1c550")
 		(sheetname "LEDs bottom")
 		(sheetfile "leds.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_pos_files)
 		(fp_poly
 			(pts
 				(xy -2.4 0.7) (xy 2.400002 0.700001) (xy 2.4 -1.6) (xy -2.4 -1.600001)
@@ -36277,7 +36277,7 @@
 		(path "/2498d782-750e-47a9-87b3-b1f09e16e239/9b8c01d9-b0e6-4328-aee9-0ead39fbda16")
 		(sheetname "LEDs bottom")
 		(sheetfile "leds.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_pos_files)
 		(fp_poly
 			(pts
 				(xy -2.400002 0.699999) (xy 2.400001 0.700001) (xy 2.4 -1.6) (xy -2.4 -1.6)
@@ -36465,7 +36465,7 @@
 		(path "/9bc8ac5c-e7dd-422f-b2d4-ac6bd6256b92/7186e20d-f12c-4990-9e0a-9e69af7df527")
 		(sheetname "LEDs top")
 		(sheetfile "leds.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_pos_files)
 		(fp_line
 			(start 0.107836 0.36)
 			(end -0.107836 0.36)
@@ -36807,7 +36807,7 @@
 		(path "/210de0db-26c5-4c02-8853-8d735ccb28a9/eea70ecb-9b98-42b9-bf23-354616c23be4")
 		(sheetname "PoE")
 		(sheetfile "poe.kicad_sch")
-		(attr exclude_from_pos_files)
+		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
 			(end 0 -1.2)
@@ -36943,7 +36943,7 @@
 		(path "/9bc8ac5c-e7dd-422f-b2d4-ac6bd6256b92/588f20ba-07ce-4b7b-a39e-6b8a51249014")
 		(sheetname "LEDs top")
 		(sheetfile "leds.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_pos_files)
 		(fp_line
 			(start 0.107838 -0.36)
 			(end -0.107836 -0.360001)
@@ -37163,7 +37163,7 @@
 		(path "/210de0db-26c5-4c02-8853-8d735ccb28a9/fe2d0d6a-71b1-415c-9784-1f2f3cb1505a")
 		(sheetname "PoE")
 		(sheetfile "poe.kicad_sch")
-		(attr exclude_from_pos_files)
+		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
 			(end 1.5 0)
@@ -37274,7 +37274,7 @@
 		(path "/210de0db-26c5-4c02-8853-8d735ccb28a9/d2312bb0-ede6-4f43-98b2-4f28fb1f6e38")
 		(sheetname "PoE")
 		(sheetfile "poe.kicad_sch")
-		(attr exclude_from_pos_files)
+		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
 			(end 1.5 0)
@@ -37385,7 +37385,7 @@
 		(path "/210de0db-26c5-4c02-8853-8d735ccb28a9/1763091f-1232-47bf-9ca9-cf9614743eca")
 		(sheetname "PoE")
 		(sheetfile "poe.kicad_sch")
-		(attr exclude_from_pos_files)
+		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
 			(end 0 -1.2)
@@ -37507,7 +37507,7 @@
 		(path "/210de0db-26c5-4c02-8853-8d735ccb28a9/f6f8e980-c307-4953-a4bb-e411f490646a")
 		(sheetname "PoE")
 		(sheetfile "poe.kicad_sch")
-		(attr exclude_from_pos_files)
+		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
 			(end 0 -1.2)
@@ -37754,7 +37754,7 @@
 		(path "/9bc8ac5c-e7dd-422f-b2d4-ac6bd6256b92/d3766296-b8e5-464d-9f93-e93bd6ad502b")
 		(sheetname "LEDs top")
 		(sheetfile "leds.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_pos_files)
 		(fp_line
 			(start 0.107837 -0.36)
 			(end -0.107836 -0.360001)
@@ -37988,7 +37988,7 @@
 		(path "/9bc8ac5c-e7dd-422f-b2d4-ac6bd6256b92/6ad2d735-c19b-4f74-aad7-684c7f4d6492")
 		(sheetname "LEDs top")
 		(sheetfile "leds.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_pos_files)
 		(fp_line
 			(start 0.107837 -0.36)
 			(end -0.107836 -0.360002)
@@ -38208,7 +38208,7 @@
 		(path "/210de0db-26c5-4c02-8853-8d735ccb28a9/5ffb857c-d17a-44fa-98ed-4f683e7769ac")
 		(sheetname "PoE")
 		(sheetfile "poe.kicad_sch")
-		(attr exclude_from_pos_files)
+		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
 			(end 1.5 0)
@@ -38441,7 +38441,7 @@
 		(path "/210de0db-26c5-4c02-8853-8d735ccb28a9/f283ff28-1308-4f8c-94d4-9c378688b06d")
 		(sheetname "PoE")
 		(sheetfile "poe.kicad_sch")
-		(attr exclude_from_pos_files)
+		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
 			(end 1.5 0)
@@ -38566,7 +38566,7 @@
 		(path "/9bc8ac5c-e7dd-422f-b2d4-ac6bd6256b92/44ae7230-4e8a-4a44-8a2b-66a1d8ce9cd1")
 		(sheetname "LEDs top")
 		(sheetfile "leds.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_pos_files)
 		(fp_line
 			(start 0.107837 0.360001)
 			(end -0.107835 0.36)
@@ -38800,7 +38800,7 @@
 		(path "/2498d782-750e-47a9-87b3-b1f09e16e239/49c1dc28-0100-4545-aadd-65d2668d8de3")
 		(sheetname "LEDs bottom")
 		(sheetfile "leds.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_pos_files)
 		(fp_poly
 			(pts
 				(xy -2.4 0.7) (xy 2.400001 0.700001) (xy 2.4 -1.6) (xy -2.4 -1.600001)
@@ -39085,7 +39085,7 @@
 		(path "/9f4b67e8-4442-4d5e-a906-b0ef4b194a46")
 		(sheetname "Stammblatt")
 		(sheetfile "TallyLight.kicad_sch")
-		(attr exclude_from_pos_files)
+		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
 			(end 1.5 0)
@@ -39332,7 +39332,7 @@
 		(path "/2498d782-750e-47a9-87b3-b1f09e16e239/3bafa7da-99b4-4948-8cdb-0e76bd859051")
 		(sheetname "LEDs bottom")
 		(sheetfile "leds.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_pos_files)
 		(fp_poly
 			(pts
 				(xy -2.4 0.7) (xy 2.4 0.7) (xy 2.4 -1.6) (xy -2.4 -1.6)
@@ -39520,7 +39520,7 @@
 		(path "/9bc8ac5c-e7dd-422f-b2d4-ac6bd6256b92/bbbcb732-4d26-4136-9e2c-ec136f86ad2a")
 		(sheetname "LEDs top")
 		(sheetfile "leds.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_pos_files)
 		(fp_line
 			(start 0.107836 0.360001)
 			(end -0.107838 0.36)
@@ -57497,19 +57497,20 @@
 				(xy 134.791773 92.28279) (xy 134.791775 92.282789) (xy 134.930204 92.195808) (xy 135.045808 92.080204)
 				(xy 135.132789 91.941775) (xy 135.186786 91.787461) (xy 135.189068 91.767211) (xy 135.205091 91.625003)
 				(xy 135.205091 91.624996) (xy 135.186787 91.462544) (xy 135.186786 91.462542) (xy 135.186786 91.462539)
-				(xy 135.132789 91.308225) (xy 135.045808 91.169796) (xy 134.930204 91.054192) (xy 134.791774 90.96721)
-				(xy 134.637455 90.913212) (xy 134.475004 90.894909) (xy 134.474996 90.894909) (xy 134.312544 90.913212)
-				(xy 134.158225 90.96721) (xy 134.019795 91.054192) (xy 133.904192 91.169795) (xy 133.81721 91.308225)
-				(xy 133.763212 91.462544) (xy 133.74722 91.604485) (xy 133.720154 91.668899) (xy 133.662559 91.708455)
-				(xy 133.592722 91.710592) (xy 133.532815 91.674634) (xy 133.50186 91.611996) (xy 133.5 91.590602)
-				(xy 133.5 90.799996) (xy 140.269909 90.799996) (xy 140.269909 90.800003) (xy 140.288212 90.962455)
-				(xy 140.34221 91.116774) (xy 140.342211 91.116775) (xy 140.429192 91.255204) (xy 140.544796 91.370808)
-				(xy 140.683225 91.457789) (xy 140.837539 91.511786) (xy 140.837542 91.511786) (xy 140.837544 91.511787)
-				(xy 140.999996 91.530091) (xy 141 91.530091) (xy 141.000004 91.530091) (xy 141.162455 91.511787)
-				(xy 141.162456 91.511786) (xy 141.162461 91.511786) (xy 141.316775 91.457789) (xy 141.455204 91.370808)
-				(xy 141.570808 91.255204) (xy 141.657789 91.116775) (xy 141.711786 90.962461) (xy 141.717335 90.913212)
-				(xy 141.730091 90.800003) (xy 141.730091 90.799996) (xy 141.711787 90.637544) (xy 141.711786 90.637542)
-				(xy 141.711786 90.637539) (xy 141.657789 90.483225) (xy 141.570808 90.344796) (xy 141.455204 90.229192)
+				(xy 135.132789 91.308225) (xy 135.045808 91.169796) (xy 134.930204 91.054192) (xy 134.792259 90.967515)
+				(xy 134.791774 90.96721) (xy 134.637455 90.913212) (xy 134.475004 90.894909) (xy 134.474996 90.894909)
+				(xy 134.312544 90.913212) (xy 134.158225 90.96721) (xy 134.019795 91.054192) (xy 133.904192 91.169795)
+				(xy 133.81721 91.308225) (xy 133.763212 91.462544) (xy 133.74722 91.604485) (xy 133.720154 91.668899)
+				(xy 133.662559 91.708455) (xy 133.592722 91.710592) (xy 133.532815 91.674634) (xy 133.50186 91.611996)
+				(xy 133.5 91.590602) (xy 133.5 90.799996) (xy 140.269909 90.799996) (xy 140.269909 90.800003) (xy 140.288212 90.962455)
+				(xy 140.288213 90.96246) (xy 140.288214 90.962461) (xy 140.295379 90.982939) (xy 140.34221 91.116774)
+				(xy 140.342211 91.116775) (xy 140.429192 91.255204) (xy 140.544796 91.370808) (xy 140.683225 91.457789)
+				(xy 140.837539 91.511786) (xy 140.837542 91.511786) (xy 140.837544 91.511787) (xy 140.999996 91.530091)
+				(xy 141 91.530091) (xy 141.000004 91.530091) (xy 141.162455 91.511787) (xy 141.162456 91.511786)
+				(xy 141.162461 91.511786) (xy 141.316775 91.457789) (xy 141.455204 91.370808) (xy 141.570808 91.255204)
+				(xy 141.657789 91.116775) (xy 141.711786 90.962461) (xy 141.717335 90.913212) (xy 141.730091 90.800003)
+				(xy 141.730091 90.799996) (xy 141.711787 90.637544) (xy 141.711786 90.637542) (xy 141.711786 90.637539)
+				(xy 141.657789 90.483225) (xy 141.570808 90.344796) (xy 141.455204 90.229192) (xy 141.428984 90.212717)
 				(xy 141.316774 90.14221) (xy 141.162455 90.088212) (xy 141.000004 90.069909) (xy 140.999996 90.069909)
 				(xy 140.837544 90.088212) (xy 140.683225 90.14221) (xy 140.544795 90.229192) (xy 140.429192 90.344795)
 				(xy 140.34221 90.483225) (xy 140.288212 90.637544) (xy 140.269909 90.799996) (xy 133.5 90.799996)
