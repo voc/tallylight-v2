@@ -3401,12 +3401,6 @@
 		(uuid "9e0b7e82-50ec-44ab-b4ee-77031d0d6c4f")
 	)
 	(junction
-		(at 229.87 113.03)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a20614e9-1bac-4596-8ce5-fb5932819d91")
-	)
-	(junction
 		(at 170.18 86.36)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3483,6 +3477,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d8c24b11-acc2-4775-9b68-e6f361da1f1c")
+	)
+	(junction
+		(at 229.87 113.03)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "db8552ac-b6de-488d-b5d0-a258ce424956")
 	)
 	(junction
 		(at 158.75 88.9)
@@ -3623,6 +3623,16 @@
 			(type default)
 		)
 		(uuid "1902ef22-d459-4f1c-83ec-53e2730042e2")
+	)
+	(wire
+		(pts
+			(xy 229.87 121.92) (xy 229.87 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1a529e0c-f2da-4b24-990c-3430553af043")
 	)
 	(wire
 		(pts
@@ -4163,6 +4173,16 @@
 			(type default)
 		)
 		(uuid "7ac57d91-130b-4a38-832d-7736eea53e6e")
+	)
+	(wire
+		(pts
+			(xy 229.87 113.03) (xy 229.87 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7b196759-b044-481a-ba90-b7183d9b075f")
 	)
 	(wire
 		(pts
@@ -4736,16 +4756,6 @@
 	)
 	(wire
 		(pts
-			(xy 229.87 113.03) (xy 229.87 124.46)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e8a4fca3-6aa8-4fa1-8145-5a4c54348ef7")
-	)
-	(wire
-		(pts
 			(xy 90.17 114.3) (xy 90.17 115.57)
 		)
 		(stroke
@@ -4874,7 +4884,7 @@
 		)
 		(uuid "fc8d8376-e729-4a6f-b008-68a6a54908b1")
 	)
-	(text "4.3V"
+	(text "4.5V"
 		(exclude_from_sim no)
 		(at 232.41 90.424 0)
 		(effects
@@ -4883,6 +4893,16 @@
 			)
 		)
 		(uuid "49118cfe-1bdb-4ef3-824d-bcd59d701f5f")
+	)
+	(text "Alternate parts:\nWuerth 750315825\nWuerth 750315826\nWuerth 750315827"
+		(exclude_from_sim no)
+		(at 182.88 52.07 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "494a3d80-1170-441b-9e8d-c47aac125e05")
 	)
 	(hierarchical_label "PoE-"
 		(shape input)
@@ -5980,7 +6000,7 @@
 				)
 			)
 		)
-		(property "Value" "330R"
+		(property "Value" "1k"
 			(at 199.39 110.5732 90)
 			(effects
 				(font
@@ -6015,7 +6035,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C25104"
+		(property "LCSC" "C11702"
 			(at 199.39 113.03 0)
 			(effects
 				(font
@@ -6120,6 +6140,84 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
+		(at 229.87 119.38 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "34215061-b475-4abc-bb85-2d4ef1941d1c")
+		(property "Reference" "R17"
+			(at 231.3686 118.1678 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "22k"
+			(at 231.3686 120.5921 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 229.87 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 229.87 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 229.87 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25768"
+			(at 229.87 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "1bdbc459-41e1-43ca-8ae7-ca26a47bcd18")
+		)
+		(pin "1"
+			(uuid "31e90dd0-77f4-4a24-9a01-5de98703dff8")
+		)
+		(instances
+			(project "TallyLight"
+				(path "/d4f869dd-5485-4b4f-b239-21313c2a8e4c/210de0db-26c5-4c02-8853-8d735ccb28a9"
+					(reference "R17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
 		(at 229.87 134.62 0)
 		(mirror y)
 		(unit 1)
@@ -6138,7 +6236,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "5.1k"
+		(property "Value" "33k"
 			(at 231.3686 135.8321 0)
 			(effects
 				(font
@@ -6174,7 +6272,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C25905"
+		(property "LCSC" "C25779"
 			(at 229.87 134.62 0)
 			(effects
 				(font
@@ -8096,7 +8194,7 @@
 				)
 			)
 		)
-		(property "Value" "Wuerth_750315371"
+		(property "Value" "Wuerth 750315826"
 			(at 182.88 60.0823 0)
 			(effects
 				(font
@@ -9046,7 +9144,7 @@
 				)
 			)
 		)
-		(property "Value" "5.1k"
+		(property "Value" "4.7k"
 			(at 138.43 102.2405 90)
 			(effects
 				(font
@@ -9081,7 +9179,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C25905"
+		(property "LCSC" "C25900"
 			(at 138.43 104.14 0)
 			(effects
 				(font
@@ -9123,7 +9221,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "15nF"
+		(property "Value" "1nF"
 			(at 146.2659 121.8684 0)
 			(effects
 				(font
@@ -9159,7 +9257,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C15195"
+		(property "LCSC" "C1523"
 			(at 148.59 120.65 0)
 			(effects
 				(font
