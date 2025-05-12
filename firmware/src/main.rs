@@ -7,14 +7,22 @@ mod ksz8851snl;
 mod leds;
 mod tally;
 
-use core::{net::{SocketAddr, SocketAddrV4}, task::Context, u8};
+use core::{
+    net::{SocketAddr, SocketAddrV4},
+    task::Context,
+    u8,
+};
 use defmt::info;
 use embedded_hal_bus::spi::ExclusiveDevice;
 use heapless::Vec;
 use ksz8851snl::State;
 
 use embassy_executor::Spawner;
-use embassy_net::{driver::Driver, udp::{PacketMetadata, UdpSocket}, Ipv4Cidr, Runner, StackResources};
+use embassy_net::{
+    Ipv4Cidr, Runner, StackResources,
+    driver::Driver,
+    udp::{PacketMetadata, UdpSocket},
+};
 use embassy_time::{Delay, Duration, Timer};
 use esp_alloc as _;
 use esp_backtrace as _;
@@ -120,20 +128,39 @@ async fn main(spawner: Spawner) {
         .await
         .unwrap();
     spawner.spawn(eth_driver_runner_task(netrunner)).unwrap();
-    let eth_config  = embassy_net::Config::ipv4_static(embassy_net::StaticConfigV4 { address: Ipv4Cidr::new([10, 10, 10, 10].into(), 24), gateway: None, dns_servers:  Vec::new()});
-    let (eth_stack, eth_runner) = embassy_net::new(netdev, eth_config, mk_static!(StackResources<3>, StackResources::<3>::new()), seed);
+    let eth_config = embassy_net::Config::ipv4_static(embassy_net::StaticConfigV4 {
+        address: Ipv4Cidr::new([10, 10, 10, 10].into(), 24),
+        gateway: None,
+        dns_servers: Vec::new(),
+    });
+    let (eth_stack, eth_runner) = embassy_net::new(
+        netdev,
+        eth_config,
+        mk_static!(StackResources<3>, StackResources::<3>::new()),
+        seed,
+    );
     spawner.spawn(eth_runner_task(eth_runner)).unwrap();
 
     let (mut tx_buf, mut rx_buf) = ([0u8; 128], [0u8; 128]);
     let mut rx_meta = [PacketMetadata::EMPTY; 16];
     let mut tx_meta = [PacketMetadata::EMPTY; 16];
-    let mut sock = UdpSocket::new(eth_stack, &mut rx_meta, &mut rx_buf, &mut tx_meta, &mut tx_buf);
+    let mut sock = UdpSocket::new(
+        eth_stack,
+        &mut rx_meta,
+        &mut rx_buf,
+        &mut tx_meta,
+        &mut tx_buf,
+    );
     sock.bind(1234).unwrap();
     loop {
-
         eth_stack.wait_link_up().await;
         info!("Eth link up!");
-        sock.send_to(&[0x12, 0x34], "10.10.10.1:6969".parse::<SocketAddrV4>().unwrap()).await.unwrap();
+        sock.send_to(
+            &[0x12, 0x34],
+            "10.10.10.1:6969".parse::<SocketAddrV4>().unwrap(),
+        )
+        .await
+        .unwrap();
         Timer::after_secs(10).await;
     }
 
@@ -168,7 +195,9 @@ async fn wifi_runner_task(mut runner: Runner<'static, WifiDevice<'static, WifiSt
 }
 
 #[embassy_executor::task]
-async fn eth_runner_task(mut runner: Runner<'static, embassy_net_driver_channel::Device<'static, 1514>>) {
+async fn eth_runner_task(
+    mut runner: Runner<'static, embassy_net_driver_channel::Device<'static, 1514>>,
+) {
     runner.run().await
 }
 

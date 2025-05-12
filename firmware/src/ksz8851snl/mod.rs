@@ -1,9 +1,12 @@
-use core::{future::{self, poll_fn}, task::Poll};
+use core::{
+    future::{self, poll_fn},
+    task::Poll,
+};
 
 use bondrewd::Bitfields;
 use bytemuck::Zeroable;
 use defmt::debug;
-use embassy_futures::select::{select3, select4, Either3, Either4};
+use embassy_futures::select::{Either3, Either4, select3, select4};
 use embassy_net::driver::LinkState;
 use embassy_net_driver_channel::{self as ch, RxRunner};
 use embassy_time::{Duration, Ticker, Timer};
@@ -12,14 +15,13 @@ use embedded_hal_async::{
     digital::Wait,
     spi::{Operation, SpiDevice},
 };
-use embedded_registers::{Register, RegisterInterfaceAsync};
 use embedded_registers::spi::{CodecAsync, SpiDeviceAsync};
+use embedded_registers::{Register, RegisterInterfaceAsync};
 use registers::{RXDTTR, RXFHBCR, RXFHSR};
 
 mod registers;
 
 const MTU: usize = 1514;
-
 
 #[repr(u8)]
 enum Opcode {
@@ -28,7 +30,6 @@ enum Opcode {
     RXRead = 0b10,
     TXWrite = 0b11,
 }
-
 
 const CHIP_ID_FAMILY: u8 = 0x88;
 const CHIP_ID_CHIP: u8 = 0x7;
@@ -129,8 +130,6 @@ where
     rst: RST,
 }
 
-
-
 struct Chip<SPI: SpiDevice> {
     dev: SpiDeviceAsync<SPI, Codec>,
     next_frame_id: u8,
@@ -138,18 +137,17 @@ struct Chip<SPI: SpiDevice> {
 }
 
 #[derive(Bitfields, Default)]
-#[bondrewd(reverse, enforce_bytes=2)]
+#[bondrewd(reverse, enforce_bytes = 2)]
 pub struct TXCtrlWord {
     transmit_interrupt_on_completion: bool,
-    #[bondrewd(bit_length=9, endianness="be")]
+    #[bondrewd(bit_length = 9, endianness = "be")]
     __: u16,
-    #[bondrewd(bit_length=6)]
+    #[bondrewd(bit_length = 6)]
     frame_id: u8,
 }
 
 impl<SPI: SpiDevice> Chip<SPI> {
     async fn init(&mut self) -> Result<(), Error<SPI::Error>> {
-
         let cider = self.dev.read_register::<registers::CIDER>().await?;
         defmt::println!("{:?}", cider);
         if cider.read_chip_id() != CHIP_ID_CHIP || cider.read_family_id() != CHIP_ID_FAMILY {
@@ -170,11 +168,19 @@ impl<SPI: SpiDevice> Chip<SPI> {
             });
         }
 
-        let txfdpr = self.dev.read_register::<registers::TXFDPR>().await.unwrap()
+        let txfdpr = self
+            .dev
+            .read_register::<registers::TXFDPR>()
+            .await
+            .unwrap()
             .with_tx_frame_data_pointer_auto_increment(true);
         self.dev.write_register(txfdpr).await.unwrap();
 
-        let txcr = self.dev.read_register::<registers::TXCR>().await.unwrap()
+        let txcr = self
+            .dev
+            .read_register::<registers::TXCR>()
+            .await
+            .unwrap()
             .with_checksum_gen_icmp(false)
             .with_checksum_gen_tcp(false)
             .with_checksum_gen_ip(false)
@@ -183,26 +189,44 @@ impl<SPI: SpiDevice> Chip<SPI> {
             .with_crc_enable(true);
         self.dev.write_register(txcr).await.unwrap();
 
-
         // Configure rx interrupt to be every 10ms at most. TODO: is this sufficient?
-        self.dev.write_register(RXDTTR::zeroed().with_receive_duration_timer_threshold(10000)).await.unwrap();
+        self.dev
+            .write_register(RXDTTR::zeroed().with_receive_duration_timer_threshold(10000))
+            .await
+            .unwrap();
 
-        let rxqcr = self.dev.read_register::<registers::RXQCR>().await.unwrap()
+        let rxqcr = self
+            .dev
+            .read_register::<registers::RXQCR>()
+            .await
+            .unwrap()
             .with_rx_duration_timer_threshold_enable(true)
             .with_rx_ip_header_two_byte_offset_enable(false)
             .with_auto_dequeue_rxq_frame_enable(true);
         self.dev.write_register(rxqcr).await.unwrap();
 
-        let rxcr = self.dev.read_register::<registers::RXCR1>().await.unwrap()
+        let rxcr = self
+            .dev
+            .read_register::<registers::RXCR1>()
+            .await
+            .unwrap()
             .with_receive_broadcast_enable(true)
             .with_receive_unicast_enable(true);
         self.dev.write_register(rxcr).await.unwrap();
 
-        let rxcr2 = self.dev.read_register::<registers::RXCR2>().await.unwrap()
+        let rxcr2 = self
+            .dev
+            .read_register::<registers::RXCR2>()
+            .await
+            .unwrap()
             .with_spi_receive_data_burst_length(registers::SPIRxDataBurstLength::SINGLEFRAME);
         self.dev.write_register(rxcr2).await.unwrap();
 
-        let ier = self.dev.read_register::<registers::IER>().await.unwrap()
+        let ier = self
+            .dev
+            .read_register::<registers::IER>()
+            .await
+            .unwrap()
             .with_link_change_enable(true)
             .with_transmit_space_available_enable(true)
             .with_transmit_enable(true)
@@ -210,15 +234,27 @@ impl<SPI: SpiDevice> Chip<SPI> {
             .with_spi_bus_error_enable(true);
         self.dev.write_register(ier).await.unwrap();
 
-        let p1cr = self.dev.read_register::<registers::P1CR>().await.unwrap().with_led_off(true);
+        let p1cr = self
+            .dev
+            .read_register::<registers::P1CR>()
+            .await
+            .unwrap()
+            .with_led_off(true);
         self.dev.write_register(p1cr).await.unwrap();
 
-
-        let txcr = self.dev.read_register::<registers::TXCR>().await.unwrap()
+        let txcr = self
+            .dev
+            .read_register::<registers::TXCR>()
+            .await
+            .unwrap()
             .with_transmit_enable(true);
         self.dev.write_register(txcr).await.unwrap();
 
-        let rxcr = self.dev.read_register::<registers::RXCR1>().await.unwrap()
+        let rxcr = self
+            .dev
+            .read_register::<registers::RXCR1>()
+            .await
+            .unwrap()
             .with_receive_enable(true);
         self.dev.write_register(rxcr).await.unwrap();
 
@@ -226,22 +262,51 @@ impl<SPI: SpiDevice> Chip<SPI> {
     }
 
     async fn set_mac(&mut self, mac_addr: [u8; 6]) -> Result<(), Error<SPI::Error>> {
-        self.dev.write_register(registers::MARH::zeroed().with_marh(mac_addr[0..=1].try_into().unwrap())).await?;
-        self.dev.write_register(registers::MARM::zeroed().with_marm(mac_addr[2..=3].try_into().unwrap())).await?;
-        self.dev.write_register(registers::MARL::zeroed().with_marl(mac_addr[4..=5].try_into().unwrap())).await?;
+        self.dev
+            .write_register(
+                registers::MARH::zeroed().with_marh(mac_addr[0..=1].try_into().unwrap()),
+            )
+            .await?;
+        self.dev
+            .write_register(
+                registers::MARM::zeroed().with_marm(mac_addr[2..=3].try_into().unwrap()),
+            )
+            .await?;
+        self.dev
+            .write_register(
+                registers::MARL::zeroed().with_marl(mac_addr[4..=5].try_into().unwrap()),
+            )
+            .await?;
         Ok(())
     }
 
     async fn get_mac(&mut self) -> Result<[u8; 6], Error<SPI::Error>> {
-        let high = self.dev.read_register::<registers::MARH>().await?.read_marh();
-        let med = self.dev.read_register::<registers::MARM>().await?.read_marm();
-        let low = self.dev.read_register::<registers::MARL>().await?.read_marl();
+        let high = self
+            .dev
+            .read_register::<registers::MARH>()
+            .await?
+            .read_marh();
+        let med = self
+            .dev
+            .read_register::<registers::MARM>()
+            .await?
+            .read_marm();
+        let low = self
+            .dev
+            .read_register::<registers::MARL>()
+            .await?
+            .read_marl();
         Ok([high[0], high[1], med[0], med[1], low[0], low[1]])
     }
 
     async fn link_state(&mut self) -> Result<LinkState, Error<SPI::Error>> {
         Ok(
-            if self.dev.read_register::<registers::P1SR>().await?.read_link_good() {
+            if self
+                .dev
+                .read_register::<registers::P1SR>()
+                .await?
+                .read_link_good()
+            {
                 LinkState::Up
             } else {
                 LinkState::Down
@@ -259,13 +324,23 @@ impl<SPI: SpiDevice> Chip<SPI> {
                 max: 2000,
             });
         }
-        let available = self.dev.read_register::<registers::TXMIR>().await.unwrap().read_txma_memory_available();
+        let available = self
+            .dev
+            .read_register::<registers::TXMIR>()
+            .await
+            .unwrap()
+            .read_txma_memory_available();
         if (tx_len + 4) > available.into() {
             // No room in the device's buffer currently
-            self.dev.write_register(registers::TXNTFSR::zeroed().with_tx_next_total_frame_size((tx_len + 4) as u16)).await?;
-            self.dev.write_register(registers::TXQCR::zeroed().with_txq_memory_available_monitor(true)).await?;
+            self.dev
+                .write_register(
+                    registers::TXNTFSR::zeroed().with_tx_next_total_frame_size((tx_len + 4) as u16),
+                )
+                .await?;
+            self.dev
+                .write_register(registers::TXQCR::zeroed().with_txq_memory_available_monitor(true))
+                .await?;
             Ok(false)
-
         } else {
             Ok(true)
         }
@@ -292,9 +367,7 @@ impl<SPI: SpiDevice> Chip<SPI> {
         self.dev
             .interface
             .transaction(&mut [
-                Operation::Write(&[
-                    (Opcode::TXWrite as u8) << 6,
-                ]),
+                Operation::Write(&[(Opcode::TXWrite as u8) << 6]),
                 Operation::Write(&txc.into_bytes()),
                 Operation::Write(&byte_count),
                 Operation::Write(buf),
@@ -319,7 +392,13 @@ impl<SPI: SpiDevice> Chip<SPI> {
         self.dev.write_register(rxqcr).await.unwrap();
 
         loop {
-            if !self.dev.read_register::<registers::TXQCR>().await.unwrap().read_manual_enqueue_txq_frame_enable() {
+            if !self
+                .dev
+                .read_register::<registers::TXQCR>()
+                .await
+                .unwrap()
+                .read_manual_enqueue_txq_frame_enable()
+            {
                 break;
             }
         }
@@ -335,28 +414,59 @@ impl<SPI: SpiDevice> Chip<SPI> {
         debug!("Chip reports {} frames available", fc);
         if fc == 0 {
             // TODO: perhaps this should be an error
-            return Ok((0, 0))
+            return Ok((0, 0));
         }
 
         // Disable interrupts
         let ier = self.dev.read_register::<registers::IER>().await.unwrap();
-        self.dev.write_register(registers::IER::zeroed()).await.unwrap();
+        self.dev
+            .write_register(registers::IER::zeroed())
+            .await
+            .unwrap();
 
         let frame_status = self.dev.read_register::<RXFHSR>().await.unwrap().read_all();
-        let byte_count = self.dev.read_register::<RXFHBCR>().await.unwrap().read_receive_byte_count();
+        let byte_count = self
+            .dev
+            .read_register::<RXFHBCR>()
+            .await
+            .unwrap()
+            .read_receive_byte_count();
         debug!("frame RX, {} bytes, {}", byte_count, frame_status);
-        if frame_status.crc_error || frame_status.runt_frame || frame_status.frame_too_long || frame_status.mii_error || frame_status.udp_checksum_status || frame_status.tcp_checksum_status || frame_status.ip_checksum_status || frame_status.icmp_checksum_status {
+        if frame_status.crc_error
+            || frame_status.runt_frame
+            || frame_status.frame_too_long
+            || frame_status.mii_error
+            || frame_status.udp_checksum_status
+            || frame_status.tcp_checksum_status
+            || frame_status.ip_checksum_status
+            || frame_status.icmp_checksum_status
+        {
             // Frame error - discard
-            let rxqcr = self.dev.read_register::<registers::RXQCR>().await.unwrap().with_release_rx_error_frame(true);
+            let rxqcr = self
+                .dev
+                .read_register::<registers::RXQCR>()
+                .await
+                .unwrap()
+                .with_release_rx_error_frame(true);
             self.dev.write_register(rxqcr).await.unwrap();
         }
 
         // Reset the rx frame pointer
-        let rxfdpr = self.dev.read_register::<registers::RXFDPR>().await.unwrap().with_rx_frame_pointer(0);
+        let rxfdpr = self
+            .dev
+            .read_register::<registers::RXFDPR>()
+            .await
+            .unwrap()
+            .with_rx_frame_pointer(0);
         self.dev.write_register(rxfdpr).await.unwrap();
 
         // Enable DMA
-        let rxqcr = self.dev.read_register::<registers::RXQCR>().await.unwrap().with_start_dma_access(true);
+        let rxqcr = self
+            .dev
+            .read_register::<registers::RXQCR>()
+            .await
+            .unwrap()
+            .with_start_dma_access(true);
         self.dev.write_register(rxqcr).await.unwrap();
 
         // We need to read a multiple of 4 bytes in total - so we may need some padding
@@ -364,31 +474,38 @@ impl<SPI: SpiDevice> Chip<SPI> {
         let discard = &mut [0u8; 3][0..pad as usize];
 
         let mut status = registers::RXFHSR::zeroed();
-        let mut bc =  registers::RXFHBCR::zeroed();
+        let mut bc = registers::RXFHBCR::zeroed();
 
-        self.dev.interface.transaction(&mut [
-            Operation::Write(&[(Opcode::RXRead as u8) << 6]),
-            Operation::Read(&mut [0u8; 4]),
-            Operation::Read(status.data_mut()),
-            Operation::Read(bc.data_mut()),
-            Operation::Read(&mut rx_buf[0..(byte_count-4) as usize]),
-            Operation::Read(discard),
-            Operation::Read(&mut[0u8; 4]),
-        ]).await.unwrap();
+        self.dev
+            .interface
+            .transaction(&mut [
+                Operation::Write(&[(Opcode::RXRead as u8) << 6]),
+                Operation::Read(&mut [0u8; 4]),
+                Operation::Read(status.data_mut()),
+                Operation::Read(bc.data_mut()),
+                Operation::Read(&mut rx_buf[0..(byte_count - 4) as usize]),
+                Operation::Read(discard),
+                Operation::Read(&mut [0u8; 4]),
+            ])
+            .await
+            .unwrap();
 
         assert_eq!(frame_status, status.read_all());
         assert_eq!(byte_count, bc.read_receive_byte_count());
 
         // Disable DMA
-        let rxqcr = self.dev.read_register::<registers::RXQCR>().await.unwrap().with_start_dma_access(false);
+        let rxqcr = self
+            .dev
+            .read_register::<registers::RXQCR>()
+            .await
+            .unwrap()
+            .with_start_dma_access(false);
         self.dev.write_register(rxqcr).await.unwrap();
 
         // Reenable interrupts
         self.dev.write_register(ier).await.unwrap();
 
-        Ok(((byte_count-4).into(), fc.saturating_sub(1)))
-
-
+        Ok(((byte_count - 4).into(), fc.saturating_sub(1)))
     }
 }
 
@@ -399,20 +516,26 @@ impl<SPI: SpiDevice, INT: Wait, RST: OutputPin> Runner<'_, SPI, INT, RST> {
         let mut tx_space_available = true;
         let mut rx_pending = false;
         loop {
-            match select4(self.int.wait_for_low(), async {
-                if tx_space_available {
-                    tx_ch.tx_buf().await
-                } else {
-                    core::future::pending().await
-                }
-            },
-            async {
-                if rx_pending {
-                    rx_ch.rx_buf().await
-                } else {
-                    core::future::pending().await
-                }
-            }, tick.next()).await {
+            match select4(
+                self.int.wait_for_low(),
+                async {
+                    if tx_space_available {
+                        tx_ch.tx_buf().await
+                    } else {
+                        core::future::pending().await
+                    }
+                },
+                async {
+                    if rx_pending {
+                        rx_ch.rx_buf().await
+                    } else {
+                        core::future::pending().await
+                    }
+                },
+                tick.next(),
+            )
+            .await
+            {
                 Either4::First(p) => {
                     // Chip interrupted us - but why?
                     let isr = self

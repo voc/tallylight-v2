@@ -21,19 +21,19 @@ enum LinkSpeed {
 #[register(address = 0x10, mode = "rw")]
 #[bondrewd(reverse, enforce_bytes = 2)]
 pub struct MARL {
-    #[bondrewd(endianness="be")]
+    #[bondrewd(endianness = "be")]
     marl: [u8; 2],
 }
 #[register(address = 0x12, mode = "rw")]
 #[bondrewd(reverse, enforce_bytes = 2)]
 pub struct MARM {
-    #[bondrewd(endianness="be")]
+    #[bondrewd(endianness = "be")]
     marm: [u8; 2],
 }
 #[register(address = 0x14, mode = "rw")]
 #[bondrewd(reverse, enforce_bytes = 2)]
 pub struct MARH {
-    #[bondrewd(endianness="be")]
+    #[bondrewd(endianness = "be")]
     marh: [u8; 2],
 }
 
@@ -58,7 +58,7 @@ pub struct MBIR {
     rx_memory_bist_test_fail_count: u8,
 }
 
-#[register(address = 0x26, mode="rw")]
+#[register(address = 0x26, mode = "rw")]
 #[bondrewd(reverse, enforce_bytes = 2)]
 pub struct GRR {
     #[bondrewd(bit_length = 14, endianness = "be")]
@@ -67,7 +67,7 @@ pub struct GRR {
     global_soft_reset: bool,
 }
 
-#[register(address = 0x70, mode="rw")]
+#[register(address = 0x70, mode = "rw")]
 #[bondrewd(reverse, enforce_bytes = 2)]
 pub struct TXCR {
     #[bondrewd(bit_length = 7)]
@@ -83,7 +83,7 @@ pub struct TXCR {
     transmit_enable: bool,
 }
 
-#[register(address=0x74, mode="rw")]
+#[register(address = 0x74, mode = "rw")]
 #[bondrewd(reverse, enforce_bytes = 2)]
 pub struct RXCR1 {
     flush_receive_queue: bool,
@@ -98,7 +98,7 @@ pub struct RXCR1 {
     receive_multicast_enable: bool,
     receive_unicast_enable: bool,
     receive_all_enable: bool,
-    #[bondrewd(bit_length=2)]
+    #[bondrewd(bit_length = 2)]
     __: u8,
     receive_inverse_filtering: bool,
     receive_enable: bool,
@@ -115,11 +115,11 @@ pub enum SPIRxDataBurstLength {
     SINGLEFRAME = 4,
 }
 
-#[register(address=0x76, mode="rw")]
+#[register(address = 0x76, mode = "rw")]
 #[bondrewd(reverse, enforce_bytes = 2)]
 pub struct RXCR2 {
     __: u8,
-    #[bondrewd(enum_primitive = "u8", bit_length=3)]
+    #[bondrewd(enum_primitive = "u8", bit_length = 3)]
     spi_receive_data_burst_length: SPIRxDataBurstLength,
     ip4_ip6_udp_fragment_frame_pass: bool,
     receive_ip4_ip6_udp_frame_checksum_equal_zero: bool,
@@ -146,7 +146,7 @@ pub struct RXFHSR {
     pub ip_checksum_status: bool,
     pub tcp_checksum_status: bool,
     pub udp_checksum_status: bool,
-    #[bondrewd(bit_length=2)]
+    #[bondrewd(bit_length = 2)]
     ___: u8,
     pub broadcast_frame: bool,
     pub multicast_frame: bool,
@@ -158,32 +158,32 @@ pub struct RXFHSR {
     pub crc_error: bool,
 }
 
-#[register(address=0x7E, mode="r")]
-#[bondrewd(reverse, enforce_bytes=2)]
+#[register(address = 0x7E, mode = "r")]
+#[bondrewd(reverse, enforce_bytes = 2)]
 pub struct RXFHBCR {
-    #[bondrewd(bit_length=4)]
+    #[bondrewd(bit_length = 4)]
     __: u8,
-    #[bondrewd(bit_length=12, endianness="be")]
+    #[bondrewd(bit_length = 12, endianness = "be")]
     receive_byte_count: u16,
 }
 
-#[register(address=0x80, mode="rw")]
+#[register(address = 0x80, mode = "rw")]
 #[bondrewd(reverse, enforce_bytes = 2)]
 pub struct TXQCR {
-    #[bondrewd(bit_length=13, endianness="be")]
+    #[bondrewd(bit_length = 13, endianness = "be")]
     __: u16,
-    #[bondrewd(bit_length=1)]
+    #[bondrewd(bit_length = 1)]
     auto_enqueue_txq_frame_enable: bool,
-    #[bondrewd(bit_length=1)]
+    #[bondrewd(bit_length = 1)]
     txq_memory_available_monitor: bool,
-    #[bondrewd(bit_length=1)]
+    #[bondrewd(bit_length = 1)]
     manual_enqueue_txq_frame_enable: bool,
 }
 
-#[register(address=0x82, mode="rw")]
-#[bondrewd(reverse, enforce_bytes=2)]
+#[register(address = 0x82, mode = "rw")]
+#[bondrewd(reverse, enforce_bytes = 2)]
 pub struct RXQCR {
-    #[bondrewd(bit_length=3)]
+    #[bondrewd(bit_length = 3)]
     __: u8,
     rx_duration_timer_threshold_status: bool,
     rx_data_byte_count_threshold_status: bool,
@@ -195,13 +195,13 @@ pub struct RXQCR {
     rx_frame_cound_threshold_enable: bool,
     auto_dequeue_rxq_frame_enable: bool,
     start_dma_access: bool,
-    #[bondrewd(bit_length=2)]
+    #[bondrewd(bit_length = 2)]
     ____: u8,
     release_rx_error_frame: bool,
 }
 
-#[register(address=0x84, mode="rw")]
-#[bondrewd(reverse, enforce_bytes=2)]
+#[register(address = 0x84, mode = "rw")]
+#[bondrewd(reverse, enforce_bytes = 2)]
 pub struct TXFDPR {
     __: bool,
     tx_frame_data_pointer_auto_increment: bool,
@@ -211,32 +211,32 @@ pub struct TXFDPR {
     tx_frame_pointer: u16,
 }
 
-#[register(address=0x86, mode="rw")]
+#[register(address = 0x86, mode = "rw")]
 #[bondrewd(reverse, enforce_bytes = 2)]
 pub struct RXFDPR {
     __: bool,
     rx_frame_pointer_auto_increment: bool,
     #[bondrewd(bit_length = 3)]
     ___: u8,
-    #[bondrewd(bit_length = 11, endianness="be")]
+    #[bondrewd(bit_length = 11, endianness = "be")]
     rx_frame_pointer: u16,
 }
 
-#[register(address=0x8C, mode="rw")]
+#[register(address = 0x8C, mode = "rw")]
 #[bondrewd(reverse, enforce_bytes = 2)]
 pub struct RXDTTR {
-    #[bondrewd(endianness="be")]
+    #[bondrewd(endianness = "be")]
     receive_duration_timer_threshold: u16,
 }
 
-#[register(address=0x8E, mode="rw")]
-#[bondrewd(reverse, enforce_bytes=2)]
+#[register(address = 0x8E, mode = "rw")]
+#[bondrewd(reverse, enforce_bytes = 2)]
 pub struct RXDBCTR {
-    #[bondrewd(endianness="be")]
-    receive_data_byte_count_threshold: u16
+    #[bondrewd(endianness = "be")]
+    receive_data_byte_count_threshold: u16,
 }
 
-#[register(address = 0x90, mode="rw")]
+#[register(address = 0x90, mode = "rw")]
 #[bondrewd(reverse, enforce_bytes = 2)]
 pub struct IER {
     link_change_enable: bool,
@@ -274,24 +274,23 @@ pub struct ISR {
     pub transmit_space_available: bool,
     pub receive_wakeup_frame_detect: bool, // RO
     pub receive_magic_packet_detect: bool, // RO
-    pub linkup_detect: bool, // RO
-    pub energy_detect: bool, // RO
+    pub linkup_detect: bool,               // RO
+    pub energy_detect: bool,               // RO
     pub spi_bus_error: bool,
     __: bool,
 }
 
-#[register(address=0x9C, mode="rw")]
+#[register(address = 0x9C, mode = "rw")]
 #[bondrewd(reverse, enforce_bytes = 2)]
 pub struct RXFCTR {
     rx_frame_count: u8,
     recieve_frame_count_threshold: u8,
 }
 
-
-#[register(address=0x9E, mode="rw")]
+#[register(address = 0x9E, mode = "rw")]
 #[bondrewd(reverse, enforce_bytes = 2)]
 pub struct TXNTFSR {
-    #[bondrewd(endianness="be")]
+    #[bondrewd(endianness = "be")]
     tx_next_total_frame_size: u16,
 }
 
@@ -308,7 +307,7 @@ pub struct CIDER {
     __: bool,
 }
 
-#[register(address=0xF6, mode="rw")]
+#[register(address = 0xF6, mode = "rw")]
 #[bondrewd(reverse, enforce_bytes = 2)]
 pub struct P1CR {
     led_off: bool,

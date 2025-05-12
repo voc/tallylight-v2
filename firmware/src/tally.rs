@@ -1,13 +1,11 @@
 use bondrewd::Bitfields;
 
-
-
 #[derive(Bitfields, Debug, PartialEq, Eq)]
-#[bondrewd(enforce_bytes=18)]
+#[bondrewd(enforce_bytes = 18)]
 struct TSL31Message {
-    #[bondrewd(bit_length=1)]
+    #[bondrewd(bit_length = 1)]
     __: bool,
-    #[bondrewd(bit_length=7)]
+    #[bondrewd(bit_length = 7)]
     address: u8,
     tally_1: bool,
     tally_2: bool,
@@ -17,7 +15,7 @@ struct TSL31Message {
     brightness: u8,
     #[bondrewd(bit_length = 2)]
     ___: u8,
-    #[bondrewd(endianness="be")]
+    #[bondrewd(endianness = "be")]
     data: [u8; 16],
 }
 
