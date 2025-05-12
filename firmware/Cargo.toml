@@ -1,0 +1,62 @@
+# This file was automatically generated.
+
+[package]
+edition = "2024"
+name = "firmware"
+version = "0.1.0"
+
+[dependencies]
+bondrewd = { version = "0.1.14", default-features = false, features = ["derive"] }
+bondrewd-derive = "0.3.18"
+bytemuck = "1.23.0"
+defmt = "1.0.1"
+embassy-executor = { version = "0.7.0", features = ["executor-thread"] }
+embassy-futures = "0.1.1"
+embassy-net = { version = "0.6.0", features = ["dhcpv4", "udp"] }
+embassy-net-driver-channel = "0.3.0"
+embassy-sync = "0.6.2"
+embassy-time = "0.4.0"
+embassy-time-driver = "0.2.0"
+embedded-hal = "1.0.0"
+embedded-hal-async = "1.0.0"
+embedded-hal-bus = { version = "0.3.0", features = ["async"] }
+embedded-registers = "0.9.12"
+esp-alloc = "0.6.0"
+esp-backtrace = { version = "0.15.1", features = ["esp32c3", "exception-handler", "panic-handler", "println"] }
+esp-hal = { version = "0.23.1", features = ["esp32c3"] }
+esp-hal-embassy = { version = "0.6.0", features = ["esp32c3"] }
+esp-hal-smartled = { git = "https://github.com/esp-rs/esp-hal-community", rev = "ad75112", features = ["esp32c3"] }
+esp-println = { version = "0.13.1", features = ["esp32c3", "log", "defmt-espflash"] }
+esp-wifi = { version = "0.12.0", features = ["esp32c3", "wifi"] }
+fugit = "0.3.7"
+heapless = "0.8.0"
+log = "0.4.27"
+micromath = "2.1.0"
+smart-leds = "0.4.0"
+static_cell = "2.1.0"
+
+[[bin]]
+name = "firmware"
+test = false
+bench = false
+
+[profile.dev]
+debug = true
+lto = true
+opt-level = "z"
+incremental = true
+panic = "abort"
+
+[profile.release]
+debug = false
+lto = true
+opt-level = "z"
+incremental = true
+
+[features]
+default = ["defmt"]
+defmt = []
+
+[profile.dev.package."esp-wifi"]
+opt-level = 3
+
