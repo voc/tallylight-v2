@@ -172,11 +172,8 @@ pub struct RXFHBCR {
 pub struct TXQCR {
     #[bondrewd(bit_length = 13, endianness = "be")]
     __: u16,
-    #[bondrewd(bit_length = 1)]
     auto_enqueue_txq_frame_enable: bool,
-    #[bondrewd(bit_length = 1)]
     txq_memory_available_monitor: bool,
-    #[bondrewd(bit_length = 1)]
     manual_enqueue_txq_frame_enable: bool,
 }
 

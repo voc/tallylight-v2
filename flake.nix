@@ -23,11 +23,13 @@
       default = pkgs.mkShell {
         packages = with pkgs; [
           espflash
+          probe-rs
           (rust-bin.nightly.latest.default.override {
             extensions = [ "rust-src" ];
             targets = [ "riscv32imc-unknown-none-elf" ];
           })
           esptool
+          rust-analyzer
         ];
       };
     });

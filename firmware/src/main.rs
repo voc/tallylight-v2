@@ -5,22 +5,18 @@
 
 mod ksz8851snl;
 mod leds;
+mod rpc;
 mod tally;
 
-use core::{
-    net::{SocketAddr, SocketAddrV4},
-    task::Context,
-    u8,
-};
+use core::u8;
 use defmt::info;
+use embassy_futures::select::{Either, select};
 use embedded_hal_bus::spi::ExclusiveDevice;
-use heapless::Vec;
 use ksz8851snl::State;
 
 use embassy_executor::Spawner;
 use embassy_net::{
-    Ipv4Cidr, Runner, StackResources,
-    driver::Driver,
+    Runner, StackResources,
     udp::{PacketMetadata, UdpSocket},
 };
 use embassy_time::{Delay, Duration, Timer};
@@ -29,6 +25,7 @@ use esp_backtrace as _;
 use esp_hal::{
     self, Async,
     clock::CpuClock,
+    efuse::Efuse,
     gpio::{Input, Level, Output, Pull},
     rng::Rng,
     spi::master::{Config, Spi},
@@ -90,17 +87,21 @@ async fn main(spawner: Spawner) {
     // Init network stack
     let (stack, runner) = embassy_net::new(
         wifi_interface,
-        config,
+        config.clone(),
         mk_static!(StackResources<3>, StackResources::<3>::new()),
         seed,
     );
 
-    spawner.spawn(connection(controller)).ok();
-    spawner.spawn(wifi_runner_task(runner)).ok();
+    //spawner.spawn(connection(controller)).ok();
+    //spawner.spawn(wifi_runner_task(runner)).ok();
 
     // spawner
     //     .spawn(led_animator(peripherals.RMT, peripherals.GPIO6.into()))
     //     .ok();
+    //
+    //loop {
+    //    Timer::after_millis(50).await;
+    //}
 
     // Ethernet
     let eth_reset = Output::new(peripherals.GPIO10, Level::Low);
@@ -108,7 +109,7 @@ async fn main(spawner: Spawner) {
     let spi: Spi<'static, _> = Spi::new(
         peripherals.SPI2,
         Config::default()
-            .with_frequency(100.kHz())
+            .with_frequency(1.MHz())
             .with_mode(esp_hal::spi::Mode::_0),
     )
     .unwrap()
@@ -121,21 +122,19 @@ async fn main(spawner: Spawner) {
 
     let spi = ExclusiveDevice::new(spi, cs, Delay).unwrap();
 
-    let mac = [0x88, 0x34, 0x56, 0x78, 0x9a, 0x88];
+    // Read the wifi mac and use it for ethernet.
+    // This is a little bit dodgy, but so long as we ensure only one of ethernet/wifi are in use...
+    let mac = Efuse::read_base_mac_address();
+
     static STATE: StaticCell<State<10, 10>> = StaticCell::new();
     let state = STATE.init(State::<10, 10>::new());
     let (netdev, netrunner) = ksz8851snl::new(mac, state, spi, eth_int, eth_reset)
         .await
         .unwrap();
     spawner.spawn(eth_driver_runner_task(netrunner)).unwrap();
-    let eth_config = embassy_net::Config::ipv4_static(embassy_net::StaticConfigV4 {
-        address: Ipv4Cidr::new([10, 10, 10, 10].into(), 24),
-        gateway: None,
-        dns_servers: Vec::new(),
-    });
     let (eth_stack, eth_runner) = embassy_net::new(
         netdev,
-        eth_config,
+        config,
         mk_static!(StackResources<3>, StackResources::<3>::new()),
         seed,
     );
@@ -152,40 +151,29 @@ async fn main(spawner: Spawner) {
         &mut tx_buf,
     );
     sock.bind(1234).unwrap();
+    let mut udpbuf = [0u8; 1024];
     loop {
+        defmt::info!("Waiting for ethernet link up...");
         eth_stack.wait_link_up().await;
-        info!("Eth link up!");
-        sock.send_to(
-            &[0x12, 0x34],
-            "10.10.10.1:6969".parse::<SocketAddrV4>().unwrap(),
-        )
-        .await
-        .unwrap();
-        Timer::after_secs(10).await;
-    }
-
-    loop {
-        if stack.is_link_up() {
-            break;
+        defmt::info!("Link up!");
+        defmt::info!("Wating for dhcp...");
+        eth_stack.wait_config_up().await;
+        if let Some(c) = eth_stack.config_v4() {
+            defmt::info!("DHCP: {}", c.address);
         }
-        Timer::after(Duration::from_millis(500)).await;
-    }
-    println!("Waiting to get IP address...");
-    loop {
-        if let Some(config) = stack.config_v4() {
-            println!("Got IP: {}", config.address);
-            break;
+        loop {
+            match select(eth_stack.wait_link_down(), sock.recv_from(&mut udpbuf)).await {
+                Either::First(_) => {
+                    defmt::info!("Link down");
+                    break;
+                }
+                Either::Second(Ok((len, meta))) => {
+                    info!("{} bytes from {}", len, meta);
+                    sock.send_to(&udpbuf[..len], meta.endpoint).await.unwrap();
+                }
+                Either::Second(_) => panic!(),
+            }
         }
-        Timer::after(Duration::from_millis(500)).await;
-    }
-
-    let button = Input::new(peripherals.GPIO0, Pull::None);
-    println!("done");
-    loop {
-        println!("Hello, World!");
-        println!("{}", button.is_high());
-        // led.toggle();
-        Timer::after_millis(1_000).await;
     }
 }
 
