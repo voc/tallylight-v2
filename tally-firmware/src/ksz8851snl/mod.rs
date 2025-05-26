@@ -1,7 +1,7 @@
 use bondrewd::Bitfields;
 use bytemuck::Zeroable;
-use defmt::{debug, error, info, panic, warn};
-use embassy_futures::select::{Either4, select4};
+use defmt::{debug, error, panic, warn};
+use embassy_futures::select::{select4, Either4};
 use embassy_net::driver::LinkState;
 use embassy_net_driver_channel::{self as ch};
 use embassy_time::{Duration, Ticker, Timer};

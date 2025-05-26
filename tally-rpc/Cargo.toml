@@ -1,0 +1,12 @@
+[package]
+name = "tally-rpc"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+postcard-rpc = { version = "0.11.9", path = "../../postcard-rpc/source/postcard-rpc", features = ["defmt"], default-features = false}
+serde = { version = "1.0.219", default-features = false, features = ["derive"] }
+postcard-schema = "0.2.1"
+
+[lib]
+path = "src/lib.rs"

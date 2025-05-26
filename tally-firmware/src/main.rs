@@ -1,24 +1,18 @@
 #![feature(generic_arg_infer)]
-#![feature(generic_const_exprs)]
 #![no_std]
 #![no_main]
 
 mod ksz8851snl;
 mod leds;
-mod rpc;
 mod tally;
 
 use core::u8;
-use defmt::info;
-use embassy_futures::select::{Either, select};
 use embedded_hal_bus::spi::ExclusiveDevice;
 use ksz8851snl::State;
 
 use embassy_executor::Spawner;
-use embassy_net::{
-    Runner, StackResources,
-    udp::{PacketMetadata, UdpSocket},
-};
+use embassy_net::{IpListenEndpoint, Runner, StackResources, tcp::TcpSocket};
+use embassy_sync::blocking_mutex::raw::NoopRawMutex;
 use embassy_time::{Delay, Duration, Timer};
 use esp_alloc as _;
 use esp_backtrace as _;
@@ -41,8 +35,19 @@ use esp_wifi::{
     },
 };
 use fugit::RateExtU32;
+use postcard_rpc::{
+    define_dispatch,
+    header::{VarHeader, VarKeyKind},
+    server::{
+        Dispatch, Server, WireTx,
+        impls::embassy_net_tcp::dispatch_impl::{
+            PacketBuffers, WireRxBuf, WireRxImpl, WireSpawnImpl, WireStorage, WireTxImpl, spawn_fn,
+        },
+    },
+};
 use smart_leds::SmartLedsWrite;
-use static_cell::StaticCell;
+use static_cell::{ConstStaticCell, StaticCell};
+use tally_rpc::rpc::{ENDPOINTS_LIST, InfoEndpoint, InfoResponse, TOPICS_IN_LIST, TOPICS_OUT_LIST};
 
 macro_rules! mk_static {
     ($t:ty,$val:expr) => {{
@@ -55,6 +60,57 @@ macro_rules! mk_static {
 
 const SSID: &str = env!("SSID");
 const PASSWORD: &str = env!("PASSWORD");
+
+// postcard-rpc stuff
+// We have TCP RPC server for device configuration/monitoring
+
+type AppTx = WireTxImpl<NoopRawMutex>;
+type AppRx = WireRxImpl;
+type AppServer = Server<AppTx, AppRx, WireRxBuf, TallyApp>;
+type AppStorage = WireStorage<NoopRawMutex>;
+pub struct Context;
+
+define_dispatch! {
+    app: TallyApp;
+    spawn_fn: spawn_fn;
+    tx_impl: AppTx;
+    spawn_impl: WireSpawnImpl;
+    context: Context;
+
+    endpoints: {
+        list: ENDPOINTS_LIST;
+
+        | EndpointTy    | kind | handler |
+        | ------------- | ---- | ------- |
+        | InfoEndpoint  | async | info_handler |
+
+    };
+
+    topics_in: {
+        list: TOPICS_IN_LIST;
+
+        | TopicTy | kind | handler |
+        | ------- | ---- | ------- |
+    };
+
+    topics_out: {
+        list: TOPICS_OUT_LIST;
+    };
+}
+
+static BUFS: ConstStaticCell<PacketBuffers<1024, 1024>> =
+    ConstStaticCell::new(PacketBuffers::new());
+static TCP_BUFS: ConstStaticCell<PacketBuffers<1024, 1024>> =
+    ConstStaticCell::new(PacketBuffers::new());
+static STORAGE: AppStorage = AppStorage::new();
+static RPC_SOCK: StaticCell<TcpSocket> = StaticCell::new();
+
+async fn info_handler(_context: &mut Context, _header: VarHeader, _req: ()) -> InfoResponse {
+    InfoResponse {
+        mac: [0; 6],
+        fw_version: (0, 0, 0),
+    }
+}
 
 #[main]
 async fn main(spawner: Spawner) {
@@ -140,18 +196,15 @@ async fn main(spawner: Spawner) {
     );
     spawner.spawn(eth_runner_task(eth_runner)).unwrap();
 
-    let (mut tx_buf, mut rx_buf) = ([0u8; 128], [0u8; 128]);
-    let mut rx_meta = [PacketMetadata::EMPTY; 16];
-    let mut tx_meta = [PacketMetadata::EMPTY; 16];
-    let mut sock = UdpSocket::new(
+    let tcp_bufs = TCP_BUFS.take();
+    let rpc_sock = RPC_SOCK.init(TcpSocket::new(
         eth_stack,
-        &mut rx_meta,
-        &mut rx_buf,
-        &mut tx_meta,
-        &mut tx_buf,
-    );
-    sock.bind(1234).unwrap();
-    let mut udpbuf = [0u8; 1024];
+        tcp_bufs.rx_buf.as_mut_slice(),
+        tcp_bufs.tx_buf.as_mut_slice(),
+    ));
+
+    let bufs = BUFS.take();
+
     loop {
         defmt::info!("Waiting for ethernet link up...");
         eth_stack.wait_link_up().await;
@@ -161,19 +214,25 @@ async fn main(spawner: Spawner) {
         if let Some(c) = eth_stack.config_v4() {
             defmt::info!("DHCP: {}", c.address);
         }
-        loop {
-            match select(eth_stack.wait_link_down(), sock.recv_from(&mut udpbuf)).await {
-                Either::First(_) => {
-                    defmt::info!("Link down");
-                    break;
-                }
-                Either::Second(Ok((len, meta))) => {
-                    info!("{} bytes from {}", len, meta);
-                    sock.send_to(&udpbuf[..len], meta.endpoint).await.unwrap();
-                }
-                Either::Second(_) => panic!(),
-            }
-        }
+        let (tx_impl, rx_impl) = STORAGE
+            .accept(
+                rpc_sock,
+                IpListenEndpoint::from(1234),
+                bufs.tx_buf.as_mut_slice(),
+            )
+            .await;
+
+        let context = Context {};
+        let dispatcher = TallyApp::new(context, spawner.into());
+        let vkk = dispatcher.min_key_len();
+        let mut server: AppServer = Server::new(
+            tx_impl,
+            rx_impl,
+            bufs.rx_buf.as_mut_slice(),
+            dispatcher,
+            vkk,
+        );
+        server.run().await;
     }
 }
 

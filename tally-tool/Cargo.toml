@@ -1,0 +1,9 @@
+[package]
+name = "tool"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+postcard-rpc = { version = "0.11.9", path = "../../postcard-rpc/source/postcard-rpc", default-features = false, features = ["tcp", "use-std"] }
+tally-rpc = { version = "0.1.0", path = "../tally-rpc" }
+tokio = { version = "1.45.0", features = ["net", "rt-multi-thread"] }
