@@ -13,7 +13,7 @@ async fn main() {
         .unwrap()
         .next()
         .unwrap();
-    let cli = HostClient::<WireErr>::connect_tcp(addr).await;
+    let cli = HostClient::<postcard_rpc::standard_icd::WireError>::connect_tcp(addr).await;
     println!("connected");
     let info: InfoResponse = cli.send_resp::<InfoEndpoint>(&()).await.unwrap();
     println!("{:?}", info);

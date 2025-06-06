@@ -5,12 +5,13 @@ use serde::{Deserialize, Serialize};
 
 endpoints! {
     list = ENDPOINTS_LIST;
-    | EndpointTy            | RequestTy     | ResponseTy        | Path         |
-    | ----------            | ---------     | ----------        | ----         |
-    | InfoEndpoint          | ()            | InfoResponse<'a>  | "info"       |
-    | SetConfigEndpoint     | Config        | ()                | "setconf"    |
-    | StartColorTest        | ()            | bool              | "startcolor" |
-    | StopColorTest         | ()            | bool              | "stopcolor"  |
+    | EndpointTy            | RequestTy     | ResponseTy        | Path         | Cfg                            |
+    | ----------            | ---------     | ----------        | ----         | ---                            |
+    | InfoEndpoint          | ()            | InfoResponse<'a>  | "info"       | cfg(not(feature = "use-std"))  |
+    | InfoEndpoint          | ()            | InfoResponse      | "info"       | cfg(feature = "use-std")       |
+    | SetConfigEndpoint     | Config        | ()                | "setconf"    |                                |
+    | StartColorTest        | ()            | bool              | "startcolor" |                                |
+    | StopColorTest         | ()            | bool              | "stopcolor"  |                                |
 }
 
 topics! {
@@ -72,9 +73,18 @@ impl Default for Config {
 
 // Responses
 
+#[cfg(not(feature = "use-std"))]
 #[derive(Serialize, Deserialize, Schema, Debug)]
 pub struct InfoResponse<'a> {
     pub name: &'a str,
+    pub mac: [u8; 6],
+    pub fw_version: (u8, u8, u8),
+}
+
+#[cfg(feature = "use-std")]
+#[derive(Serialize, Deserialize, Schema, Debug)]
+pub struct InfoResponse {
+    pub name: String,
     pub mac: [u8; 6],
     pub fw_version: (u8, u8, u8),
 }

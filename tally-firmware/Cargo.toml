@@ -31,7 +31,7 @@ heapless = "0.8.0"
 log = "0.4.27"
 micromath = "2.1.0"
 postcard = "1.1.1"
-postcard-rpc = { version = "0.11.9", path = "../../postcard-rpc/source/postcard-rpc", features = [ "defmt", "embassy-net-tcp-server", "embassy-usb-0_4-server", "embassy-usb-0_3-server"], default-features = false }
+postcard-rpc = { version = "0.11.9", features = [ "defmt", "embassy-net-tcp-server", "embassy-usb-0_4-server", "embassy-usb-0_3-server"], default-features = false }
 postcard-schema = "0.2.1"
 serde = { version = "1.0.219", default-features = false, features = ["derive"] }
 smart-leds = "0.4.0"

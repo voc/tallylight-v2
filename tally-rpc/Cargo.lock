@@ -370,6 +370,8 @@ dependencies = [
 [[package]]
 name = "postcard-rpc"
 version = "0.11.9"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6af390b4b4c1a3a187293bfef773157c75a06f935eeae147c981ee1d958652ea"
 dependencies = [
  "defmt 0.3.100",
  "heapless 0.8.0",

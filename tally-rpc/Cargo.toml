@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-postcard-rpc = { version = "0.11.9", path = "../../postcard-rpc/source/postcard-rpc", features = ["defmt"], default-features = false}
+postcard-rpc = { version = "0.11.9", features = ["defmt"], default-features = false}
 serde = { version = "1.0.219", default-features = false, features = ["derive"] }
 postcard-schema = "0.2.1"
 embassy-net = { version = "0.7.0", default-features = false, features = ["dhcpv4", "medium-ethernet", "proto-ipv4", "tcp"] }
@@ -12,3 +12,6 @@ heapless = "0.8.0"
 
 [lib]
 path = "src/lib.rs"
+
+[features]
+use-std = []
