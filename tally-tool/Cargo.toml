@@ -11,7 +11,11 @@ name = "tallycli"
 
 [dependencies]
 eframe = { version = "0.31.1", default-features = false, features = ["glow", "default_fonts"] }
-postcard-rpc = { version = "0.11.9", path = "../../postcard-rpc/source/postcard-rpc", default-features = false, features = ["tcp", "use-std"] }
-tally-rpc = { version = "0.1.0", path = "../tally-rpc" }
+postcard-rpc = { version = "0.11.9", default-features = false, features = ["tcp", "use-std"] }
+tally-rpc = { version = "0.1.0", path = "../tally-rpc", features = ["use-std"] }
 tokio = { version = "1.45.0", features = ["net", "rt-multi-thread"] }
 tracing-subscriber = "0.3.19"
+
+[patch.crates-io.postcard-rpc]
+git = "https://github.com/wlcx/postcard-rpc"
+rev = "78746802307073a84c090d01d12335d3a2611075"
