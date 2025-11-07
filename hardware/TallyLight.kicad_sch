@@ -1,14 +1,18 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(uuid "d4f869dd-5485-4b4f-b239-21313c2a8e4c")
 	(paper "A4")
 	(lib_symbols
 		(symbol "Connector:TestPoint"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0.762) hide)
+				(offset 0.762)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -106,10 +110,13 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Connector_Generic:Conn_01x03"
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -176,8 +183,19 @@
 			)
 			(symbol "Conn_01x03_1_1"
 				(rectangle
-					(start -1.27 -2.413)
-					(end 0 -2.667)
+					(start -1.27 3.81)
+					(end 1.27 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 2.667)
+					(end 0 2.413)
 					(stroke
 						(width 0.1524)
 						(type default)
@@ -198,25 +216,14 @@
 					)
 				)
 				(rectangle
-					(start -1.27 2.667)
-					(end 0 2.413)
+					(start -1.27 -2.413)
+					(end 0 -2.667)
 					(stroke
 						(width 0.1524)
 						(type default)
 					)
 					(fill
 						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 3.81)
-					(end 1.27 -3.81)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
 					)
 				)
 				(pin passive line
@@ -274,11 +281,16 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Device:R_Small"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0.254) hide)
+				(offset 0.254)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -396,6 +408,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Mechanical:MountingHole"
 			(pin_names
@@ -478,6 +491,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:GND"
 			(power)
@@ -557,7 +571,8 @@
 			(symbol "GND_1_1"
 				(pin power_in line
 					(at 0 0 270)
-					(length 0) hide
+					(length 0)
+					(hide yes)
 					(name "GND"
 						(effects
 							(font
@@ -574,6 +589,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 	)
 	(junction
@@ -1668,6 +1684,10 @@
 	(sheet
 		(at 129.54 91.44)
 		(size 15.24 7.62)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -1697,33 +1717,33 @@
 		)
 		(pin "PoE+" input
 			(at 129.54 93.98 180)
+			(uuid "ac1666d0-b7d8-4d1c-984a-b7804c78729b")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "ac1666d0-b7d8-4d1c-984a-b7804c78729b")
 		)
 		(pin "PoE-" input
 			(at 129.54 96.52 180)
+			(uuid "1523ae22-4f7e-48fb-b342-cce6538a4cdc")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "1523ae22-4f7e-48fb-b342-cce6538a4cdc")
 		)
 		(pin "Vout" output
 			(at 144.78 93.98 0)
+			(uuid "fe7bbc0b-bbd8-410b-a386-df775cc9460c")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "fe7bbc0b-bbd8-410b-a386-df775cc9460c")
 		)
 		(instances
 			(project "TallyLight"
@@ -1736,6 +1756,10 @@
 	(sheet
 		(at 177.8 91.44)
 		(size 20.32 15.24)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -1765,33 +1789,33 @@
 		)
 		(pin "Dout" output
 			(at 198.12 104.14 0)
+			(uuid "2245d50b-e862-4043-87d3-aa6568bcf761")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "2245d50b-e862-4043-87d3-aa6568bcf761")
 		)
 		(pin "Vled" input
 			(at 177.8 93.98 180)
+			(uuid "4a39ec4b-722d-47d0-8fff-9dd6bf4f52e7")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "4a39ec4b-722d-47d0-8fff-9dd6bf4f52e7")
 		)
 		(pin "Din" input
 			(at 177.8 104.14 180)
+			(uuid "397c8aba-be85-4b40-b23b-8c802b3de5e3")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "397c8aba-be85-4b40-b23b-8c802b3de5e3")
 		)
 		(instances
 			(project "TallyLight"
@@ -1804,6 +1828,10 @@
 	(sheet
 		(at 102.87 91.44)
 		(size 20.32 15.24)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -1833,73 +1861,73 @@
 		)
 		(pin "PoE-" output
 			(at 123.19 96.52 0)
+			(uuid "53a76992-d576-4a53-a9c2-f077b2685d9b")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "53a76992-d576-4a53-a9c2-f077b2685d9b")
 		)
 		(pin "PoE+" output
 			(at 123.19 93.98 0)
+			(uuid "7c6a003f-f9b8-4742-a623-f2410c01782a")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "7c6a003f-f9b8-4742-a623-f2410c01782a")
 		)
 		(pin "Vin" input
 			(at 102.87 93.98 180)
+			(uuid "c4eec32e-3754-47a5-8cba-3b9e9013594f")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "c4eec32e-3754-47a5-8cba-3b9e9013594f")
 		)
 		(pin "LED_Dout" output
 			(at 123.19 104.14 0)
+			(uuid "864e9239-067f-46ae-9b8a-1a38ef856aac")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "864e9239-067f-46ae-9b8a-1a38ef856aac")
 		)
 		(pin "LED_Din" input
 			(at 102.87 104.14 180)
+			(uuid "4aae5b2f-e355-481d-a70b-71598c1bb93d")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "4aae5b2f-e355-481d-a70b-71598c1bb93d")
 		)
 		(pin "IO9" input
 			(at 102.87 100.33 180)
+			(uuid "c187fbd0-ee8f-48db-bfc4-2ea1deb92b26")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "c187fbd0-ee8f-48db-bfc4-2ea1deb92b26")
 		)
 		(pin "EN" input
 			(at 102.87 97.79 180)
+			(uuid "622b97a9-d04b-4c6d-b475-62b0ee0f0be4")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "622b97a9-d04b-4c6d-b475-62b0ee0f0be4")
 		)
 		(instances
 			(project "TallyLight"
@@ -1912,6 +1940,10 @@
 	(sheet
 		(at 151.13 91.44)
 		(size 20.32 15.24)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -1941,33 +1973,33 @@
 		)
 		(pin "Dout" output
 			(at 171.45 104.14 0)
+			(uuid "61b4a70e-b5db-4432-8fa8-8c242061942d")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "61b4a70e-b5db-4432-8fa8-8c242061942d")
 		)
 		(pin "Vled" input
 			(at 151.13 93.98 180)
+			(uuid "23f05434-86fa-4b95-a1f5-72fe78630a18")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "23f05434-86fa-4b95-a1f5-72fe78630a18")
 		)
 		(pin "Din" input
 			(at 151.13 104.14 180)
+			(uuid "15528206-8e16-4aa8-800e-07e96e44a007")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "15528206-8e16-4aa8-800e-07e96e44a007")
 		)
 		(instances
 			(project "TallyLight"
@@ -1982,4 +2014,5 @@
 			(page "1")
 		)
 	)
+	(embedded_fonts no)
 )

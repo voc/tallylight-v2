@@ -12,4 +12,5 @@
   (lib (name "TestPoint_no_outline")(type "KiCad")(uri "${KIPRJMOD}/lib/TestPoint_no_outline.pretty")(options "")(descr ""))
   (lib (name "TestPoint_polygon_outline")(type "KiCad")(uri "${KIPRJMOD}/lib/TestPoint_polygon_outline.pretty")(options "")(descr ""))
   (lib (name "PCB_art")(type "KiCad")(uri "${KIPRJMOD}/lib/PCB_art.pretty")(options "")(descr ""))
+  (lib (name "Button_Switch_SMD_LCSC_Shorter")(type "KiCad")(uri "${KIPRJMOD}/lib/Button_Switch_SMD_LCSC_Shorter.pretty")(options "")(descr ""))
 )
