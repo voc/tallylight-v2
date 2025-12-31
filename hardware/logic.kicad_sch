@@ -9014,84 +9014,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C_Small")
-		(at 193.04 68.58 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "116eea0a-819b-4313-9d0a-930a77448828")
-		(property "Reference" "C23"
-			(at 190.7159 67.3741 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "100nF"
-			(at 190.7159 69.7984 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 193.04 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 193.04 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 193.04 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C1525"
-			(at 193.04 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "587d7930-61c6-4e98-bd5d-9955144a05fc")
-		)
-		(pin "1"
-			(uuid "64393831-a035-4a1b-8cc2-cc2513329f77")
-		)
-		(instances
-			(project "TallyLight"
-				(path "/d4f869dd-5485-4b4f-b239-21313c2a8e4c/7cb40ab1-1706-4709-9063-b880462d2aa7"
-					(reference "C23")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_name "GND_7")
 		(lib_id "power:GND")
 		(at 185.42 107.95 0)
@@ -10876,73 +10798,6 @@
 			(project "TallyLight"
 				(path "/d4f869dd-5485-4b4f-b239-21313c2a8e4c/7cb40ab1-1706-4709-9063-b880462d2aa7"
 					(reference "FB2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_name "GND_7")
-		(lib_id "power:GND")
-		(at 193.04 71.12 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "514948fd-d8cd-49f5-bcba-26285855b533")
-		(property "Reference" "#PWR49"
-			(at 193.04 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 193.04 75.2531 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 193.04 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 193.04 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 193.04 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "7216547a-4d12-4c8e-a6cf-18fca427d418")
-		)
-		(instances
-			(project "TallyLight"
-				(path "/d4f869dd-5485-4b4f-b239-21313c2a8e4c/7cb40ab1-1706-4709-9063-b880462d2aa7"
-					(reference "#PWR49")
 					(unit 1)
 				)
 			)
@@ -14997,7 +14852,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Button_Switch_SMD_LCSC:x-1825027-x"
+		(property "Footprint" "Button_Switch_SMD_LCSC_Shorter:KEY-TH_4P-L7.5-W6.8-P4.50-LS7.2"
 			(at 66.04 173.99 0)
 			(effects
 				(font
@@ -15718,73 +15573,6 @@
 			(project "TallyLight"
 				(path "/d4f869dd-5485-4b4f-b239-21313c2a8e4c/7cb40ab1-1706-4709-9063-b880462d2aa7"
 					(reference "C16")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_name "+3V3_1")
-		(lib_id "power:+3V3")
-		(at 193.04 66.04 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e6269b69-7db6-47cd-a047-b9635f8d7799")
-		(property "Reference" "#PWR50"
-			(at 193.04 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 193.04 61.9069 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 193.04 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 193.04 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 193.04 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "16560a43-e527-4136-bfc5-2b0ff3b903aa")
-		)
-		(instances
-			(project "TallyLight"
-				(path "/d4f869dd-5485-4b4f-b239-21313c2a8e4c/7cb40ab1-1706-4709-9063-b880462d2aa7"
-					(reference "#PWR50")
 					(unit 1)
 				)
 			)
