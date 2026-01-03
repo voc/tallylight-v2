@@ -11395,7 +11395,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://datasheet.lcsc.com/szlcsc/1811132015_TE-Connectivity-1-1825027-1_C266183.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C86476.pdf"
 			(at 0 0 125.5)
 			(layer "F.Fab")
 			(hide yes)
@@ -11419,7 +11419,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C266183"
+		(property "LCSC" "C86476"
 			(at 0 0 125.5)
 			(unlocked yes)
 			(layer "F.Fab")
